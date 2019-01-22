@@ -13,8 +13,8 @@ class CreateHorarisTable extends Migration
      */
     public function up()
     {
-        Schema::create('HORARI', function (Blueprint $table) {
-            $table->increments('id_horari');
+        Schema::create('horari', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('torn');
             $table->timestamps();
         });
@@ -27,8 +27,6 @@ class CreateHorarisTable extends Migration
      */
     public function down()
     {
-        Schema::table('HORARI', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('horari');
     }
 }

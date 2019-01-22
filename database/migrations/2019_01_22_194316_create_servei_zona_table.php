@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRolTable extends Migration
+class CreateServeiZonaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateRolTable extends Migration
      */
     public function up()
     {
-        Schema::create('rol', function (Blueprint $table) {
+        Schema::create('servei_zona', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nom_rol')->unique();
+            $table->unsignedInteger('id_zona');
+            $table->foreign('id_zona')->references('id')->on('zona');
+            $table->unsignedInteger('id_servei');
+            $table->foreign('id_servei')->references('id')->on('servei');
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreateRolTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rol');
+        Schema::dropIfExists('servei_zona');
     }
 }

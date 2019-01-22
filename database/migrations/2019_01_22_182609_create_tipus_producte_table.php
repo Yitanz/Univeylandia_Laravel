@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRolTable extends Migration
+class CreateTipusProducteTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,14 @@ class CreateRolTable extends Migration
      */
     public function up()
     {
-        Schema::create('rol', function (Blueprint $table) {
+        Schema::create('tipus_producte', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nom_rol')->unique();
+            $table->string('nom');
+            $table->string('mida');
+            $table->string('tickets_viatges');
+            $table->string('foto_path');
+            $table->string('foto_path_aigua');
+            $table->integer('preu');
             $table->timestamps();
         });
     }
@@ -27,6 +32,6 @@ class CreateRolTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rol');
+        Schema::dropIfExists('tipus_producte');
     }
 }

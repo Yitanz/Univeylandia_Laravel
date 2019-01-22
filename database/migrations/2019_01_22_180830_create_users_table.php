@@ -14,7 +14,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id_users');
+            $table->increments('id');
             $table->string('nom');
             $table->string('cognom1');
             $table->string('cognom2')->nullable();
@@ -30,9 +30,9 @@ class CreateUsersTable extends Migration
             $table->string('sexe');
             $table->string('telefon');
             $table->unsignedInteger('id_rol');
-            $table->foreign('id_rol')->references('id_rol')->on('ROL');
+            $table->foreign('id_rol')->references('id')->on('rol');
             $table->unsignedInteger('id_dades_empleat');
-            $table->foreign('id_dades_empleat')->references('id_dades_empleat')->on('DADES_EMPLEAT');
+            $table->foreign('id_dades_empleat')->references('id')->on('dades_empleat');
             $table->boolean('actiu');
             $table->string('hash');
             $table->rememberToken();

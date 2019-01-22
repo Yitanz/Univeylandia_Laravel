@@ -13,8 +13,8 @@ class CreateDadesEmpleatTable extends Migration
      */
     public function up()
     {
-        Schema::create('DADES_EMPLEAT', function (Blueprint $table) {
-          $table->increments('id_dades_empleat');
+        Schema::create('dades_empleat', function (Blueprint $table) {
+          $table->increments('id');
           $table->string('codi_seg_social');
           $table->string('num_nomina');
           $table->string('IBAN');
@@ -23,7 +23,7 @@ class CreateDadesEmpleatTable extends Migration
           $table->date('data_inici_contracte');
           $table->date('data_fi_contracte');
           $table->unsignedInteger('id_horari');
-          $table->foreign('id_horari')->references('id_horari')->on('HORARI');
+          $table->foreign('id_horari')->references('id')->on('horari');
           $table->timestamps();
         });
     }
@@ -35,8 +35,6 @@ class CreateDadesEmpleatTable extends Migration
      */
     public function down()
     {
-        Schema::table('DADES_EMPLEAT', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('dades_empleat');
     }
 }

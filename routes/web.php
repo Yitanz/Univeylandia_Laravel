@@ -80,3 +80,11 @@ route::any('/inserirNoticia', array('as' => 'inserirNoticia','uses' => 'intranet
 
 route::any('/gestioServeis', array('as' => 'gestioServeis','uses' => 'intranetController@gestioServeis'));
 route::any('/inserirServei', array('as' => 'inserirServei','uses' => 'intranetController@inserirServei'));
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -13,17 +13,17 @@ class CreateAtraccioTable extends Migration
      */
     public function up()
     {
-        Schema::create('atraccio', function (Blueprint $table) {
+        Schema::create('atraccions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nom_atraccio')->unique();
             $table->unsignedInteger('tipus_atraccio');
-            $table->foreign('tipus_atraccio')->references('id')->on('tipus_atraccio');
+            $table->foreign('tipus_atraccio')->references('id')->on('tipus_atraccions');
             $table->date('data_inauguracio');
             $table->unsignedInteger('altura_min');
             $table->unsignedInteger('altura_max');
             $table->boolean('accessibilitat');
             $table->boolean('acces_express');
-            $table->string('descripcio');
+            $table->text('descripcio');
             $table->string('path');
             $table->timestamps();
         });
@@ -36,6 +36,6 @@ class CreateAtraccioTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('atraccio');
+        Schema::dropIfExists('atraccions');
     }
 }

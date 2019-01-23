@@ -13,7 +13,7 @@ class CreateEstatIncidenciaTable extends Migration
      */
     public function up()
     {
-        Schema::create('estat_incidencia', function (Blueprint $table) {
+        Schema::create('estat_incidencies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nom_estat');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateEstatIncidenciaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estat_incidencia');
+        Schema::dropIfExists('estat_incidencies');
     }
 }

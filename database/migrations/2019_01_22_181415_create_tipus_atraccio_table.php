@@ -13,7 +13,7 @@ class CreateTipusAtraccioTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipus_atraccio', function (Blueprint $table) {
+        Schema::create('tipus_atraccions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('tipus');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateTipusAtraccioTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipus_atraccio');
+        Schema::dropIfExists('tipus_atraccions');
     }
 }

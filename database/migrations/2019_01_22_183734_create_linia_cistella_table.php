@@ -13,12 +13,12 @@ class CreateLiniaCistellaTable extends Migration
      */
     public function up()
     {
-        Schema::create('linia_cistella', function (Blueprint $table) {
+        Schema::create('linia_cistelles', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_cistella');
-            $table->foreign('id_cistella')->references('id')->on('cistella');
+            $table->foreign('id_cistella')->references('id')->on('cistelles');
             $table->unsignedInteger('producte');
-            $table->foreign('producte')->references('id')->on('producte');
+            $table->foreign('producte')->references('id')->on('productes');
             $table->integer('quantitat');
         });
     }
@@ -30,6 +30,6 @@ class CreateLiniaCistellaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('linia_cistella');
+        Schema::dropIfExists('linia_cistelles');
     }
 }

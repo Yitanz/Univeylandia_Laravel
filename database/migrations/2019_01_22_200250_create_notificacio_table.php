@@ -13,7 +13,7 @@ class CreateNotificacioTable extends Migration
      */
     public function up()
     {
-        Schema::create('notificacio', function (Blueprint $table) {
+        Schema::create('notificacions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titol');
             $table->string('cos');
@@ -30,6 +30,6 @@ class CreateNotificacioTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notificacio');
+        Schema::dropIfExists('notificacions');
     }
 }

@@ -13,10 +13,10 @@ class CreateNoticiaTable extends Migration
      */
     public function up()
     {
-        Schema::create('noticia', function (Blueprint $table) {
+        Schema::create('noticies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titol');
-            $table->string('descripcio');
+            $table->text('descripcio');
             $table->unsignedInteger('id_usuari');
             $table->foreign('id_usuari')->references('id')->on('users');
             $table->timestamps();
@@ -30,6 +30,6 @@ class CreateNoticiaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('noticia');
+        Schema::dropIfExists('noticies');
     }
 }

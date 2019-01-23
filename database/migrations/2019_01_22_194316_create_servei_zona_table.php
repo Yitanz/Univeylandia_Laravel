@@ -13,12 +13,12 @@ class CreateServeiZonaTable extends Migration
      */
     public function up()
     {
-        Schema::create('servei_zona', function (Blueprint $table) {
+        Schema::create('serveis_zones', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_zona');
-            $table->foreign('id_zona')->references('id')->on('zona');
+            $table->foreign('id_zona')->references('id')->on('zones');
             $table->unsignedInteger('id_servei');
-            $table->foreign('id_servei')->references('id')->on('servei');
+            $table->foreign('id_servei')->references('id')->on('serveis');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateServeiZonaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('servei_zona');
+        Schema::dropIfExists('serveis_zones');
     }
 }

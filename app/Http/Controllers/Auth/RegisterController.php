@@ -65,11 +65,22 @@ class RegisterController extends Controller
     {
         return User::create([
             'nom' => $data['name'],
-            'cognom1' => 'aaa',
-            'cognom2' => 'bbb',
+            'cognom1' => $data['surname1'],
+            'cognom2' => $data['surname2'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'data_naixement' => 'nose',
+            'data_naixement' => $data['birth-date'],
+            'adreca' => $data['address'],
+            'ciutat' => $data['city'],
+            'provincia' => $data['province'],
+            'codi_postal' => $data['postal-code'],
+            'tipus_document' => $data['document-type'],
+            'numero_document' => $data['document-number'],
+            'sexe' => $data['gender'],
+            'telefon' => $data['telephone-number'],
+            'id_rol' => 1,
+            'id_dades_empleat' => null,
+            'actiu' => 0,
         ]);
     }
 }

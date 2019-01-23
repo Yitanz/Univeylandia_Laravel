@@ -13,13 +13,13 @@ class CreateIncidenciaTable extends Migration
      */
     public function up()
     {
-        Schema::create('incidencia', function (Blueprint $table) {
+        Schema::create('incidencies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titol');
-            $table->string('descripcio');
+            $table->text('descripcio');
             $table->string('prioritat')->nullable();
             $table->unsignedInteger('id_estat');
-            $table->foreign('id_estat')->references('id')->on('estat_incidencia');
+            $table->foreign('id_estat')->references('id')->on('estat_incidencies');
             $table->unsignedInteger('id_usuari_client');
             $table->foreign('id_usuari_client')->references('id')->on('users');
             $table->unsignedInteger('id_usuari_empleat')->nullable();
@@ -35,6 +35,6 @@ class CreateIncidenciaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('incidencia');
+        Schema::dropIfExists('incidencies');
     }
 }

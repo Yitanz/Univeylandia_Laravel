@@ -13,7 +13,7 @@ class CreateCistellaTable extends Migration
      */
     public function up()
     {
-        Schema::create('cistella', function (Blueprint $table) {
+        Schema::create('cistelles', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_usuari');
             $table->foreign('id_usuari')->references('id')->on('users');
@@ -28,6 +28,6 @@ class CreateCistellaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cistella');
+        Schema::dropIfExists('cistelles');
     }
 }

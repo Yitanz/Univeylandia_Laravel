@@ -13,7 +13,7 @@ class CreateVentaProducteTable extends Migration
      */
     public function up()
     {
-        Schema::create('venta_producte', function (Blueprint $table) {
+        Schema::create('venta_productes', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_usuari');
             $table->foreign('id_usuari')->references('id')->on('users');
@@ -29,6 +29,6 @@ class CreateVentaProducteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('venta_producte');
+        Schema::dropIfExists('venta_productes');
     }
 }

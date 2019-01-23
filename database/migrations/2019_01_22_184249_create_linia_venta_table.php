@@ -13,12 +13,12 @@ class CreateLiniaVentaTable extends Migration
      */
     public function up()
     {
-        Schema::create('linia_venta', function (Blueprint $table) {
+        Schema::create('linia_ventes', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_venta');
-            $table->foreign('id_venta')->references('id')->on('venta_producte');
+            $table->foreign('id_venta')->references('id')->on('venta_productes');
             $table->unsignedInteger('producte');
-            $table->foreign('producte')->references('id')->on('producte');
+            $table->foreign('producte')->references('id')->on('productes');
             $table->integer('quantitat');
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ class CreateLiniaVentaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('linia_venta');
+        Schema::dropIfExists('linia_ventes');
     }
 }

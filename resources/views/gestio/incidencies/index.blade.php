@@ -13,11 +13,11 @@
         margin-top: 40px;
       }
     </style>
-    <div class="uper">
+    <div class="uper d-none">
       @if(session()->get('success'))
         <div class="alert alert-success">
-          {{ session()->get('success') }}  
-        </div><br />
+          {{ session()->get('success') }}
+        </div>
       @endif
     </div>
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -66,7 +66,7 @@
                         <td>{{ $incidencia->titol }}</td>
                         <td>{{ $incidencia->descripcio }}</td>
                         <td>{{ $incidencia->prioritat }}</td>
-                        <td>{{ $incidencia-> }}</td>
+                        <td>{{ $incidencia->id_estat }}</td>
                         <td>{{ $incidencia->id_usuari_client }}</td>
                         <td>{{ $incidencia->id_usuari_empleat }}</td>
                         <td><a class="btn btn-primary" href="{{ route('incidencies.edit', $incidencia->id) }}">Modificar</a></td>

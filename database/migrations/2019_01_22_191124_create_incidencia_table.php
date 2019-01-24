@@ -17,7 +17,8 @@ class CreateIncidenciaTable extends Migration
             $table->increments('id');
             $table->string('titol');
             $table->text('descripcio');
-            $table->string('prioritat')->nullable();
+            $table->unsignedInteger('id_prioritat');
+            $table->foreign('id_prioritat')->references('id')->on('tipus_prioritat');
             $table->unsignedInteger('id_estat');
             $table->foreign('id_estat')->references('id')->on('estat_incidencies');
             $table->unsignedInteger('id_usuari_client');

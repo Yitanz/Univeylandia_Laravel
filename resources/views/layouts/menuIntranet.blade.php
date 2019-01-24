@@ -146,10 +146,10 @@
 
           <ul class="nav flex-column collapse" id="submenu5" data-parent="#sidebar">
             <li class="nav-item">
-              <a class="nav-link nav-interior" href="{{URL::route('inserirIncidencia')}}"><span data-feather="plus-square"></span>Crear Inicidència</a>
+              <a class="nav-link nav-interior" href="{{URL::route('incidencies.create')}}"><span data-feather="plus-square"></span>Crear Inicidència</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-interior" href="{{URL::route('gestioIncidencia')}}"><span data-feather="file-text"></span>Gestionar Inicidències</a>
+              <a class="nav-link nav-interior" href="{{URL::route('incidencies.index')}}"><span data-feather="file-text"></span>Gestionar Inicidències</a>
             </li>
           </ul>
 

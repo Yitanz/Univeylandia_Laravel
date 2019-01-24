@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Incidencia;
+use Auth;
 
 class IncidenciesController extends Controller
 {
@@ -13,7 +15,11 @@ class IncidenciesController extends Controller
      */
     public function index()
     {
-        //
+        $incidencies = Incidencia::leftjoin('estat_incidencies','incidencies.id_estat','=','estat_incidencies.id')
+            ->where('incidencies.id_estat','=',1)
+            ->get();
+
+        return view('gestio/incidencies/index', compact('incidencies'));
     }
 
     /**
@@ -23,7 +29,7 @@ class IncidenciesController extends Controller
      */
     public function create()
     {
-        //
+        return view('gestio/incidencies/create');
     }
 
     /**
@@ -34,7 +40,23 @@ class IncidenciesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'priority' => 'required'
+        ]);
+
+        $user = Auth::user();
+
+        $incidencia = new Incidencia([
+            'titol' => $request->get('title'),
+            'descripcio' => $request->get('description'),
+            'prioritat' => $request->get('priority'),
+            'id_estat' => 1,
+            'id_usuari_client' => $user->id,
+        ]);
+        $incidencia->save();
+        return redirect('/gestio/incidencies')->with('success', 'Incidència creada correctament');
     }
 
     /**
@@ -56,7 +78,7 @@ class IncidenciesController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('gestio/incidencies/edit');
     }
 
     /**

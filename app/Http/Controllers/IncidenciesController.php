@@ -78,7 +78,9 @@ class IncidenciesController extends Controller
      */
     public function edit($id)
     {
-        return view('gestio/incidencies/edit');
+        $incidencia = Incidencia::find($id);
+
+        return view('gestio/incidencies/edit', compact('incidencia'));
     }
 
     /**

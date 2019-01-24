@@ -33,19 +33,24 @@
                 <textarea class="form-control form-control-sm" name="description" rows="3" value="{{ $incidencia->descripcio }}" readonly></textarea>
               </div>
             </div>
+            {{ $incidencia->prioritat }}
             <div class="col-md-6 mb-3">
               <label for="priority">Prioritat</label>
               <select class="form-control form-control-sm" name="priority">
-                <option value="Baixa">Baixa</option>
-                <option value="Mitja">Mitja</option>
-                <option value="Alta">Alta</option>
+              
+                @if ($incidencia->id)
+                
+                <option selected value="{{ $incidencia->prioritat }}">{{ $incidencia->prioritat }}</option>
+                @else
+                <option value="{{ $incidencia->prioritat }}">{{ $incidencia->prioritat }}</option>
+                @endif
               </select>
             </div>
             <div class="col-md-6 mb-3">
               <label for="assigned-employee">Assignar a:</label>
               <input list="employees" name="assigned-employee" class="form-control form-control-sm">
               <datalist id="employees" name="assigned-employee">
-                <option value="ASD">
+              
               </datalist>
             </div>
           </div>

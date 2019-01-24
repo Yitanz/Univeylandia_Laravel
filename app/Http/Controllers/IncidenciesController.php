@@ -15,9 +15,7 @@ class IncidenciesController extends Controller
      */
     public function index()
     {
-        $incidencies = Incidencia::leftjoin('estat_incidencies','incidencies.id_estat','=','estat_incidencies.id')
-            ->where('incidencies.id_estat','=',1)
-            ->get();
+        $incidencies = Incidencia::all();
 
         return view('gestio/incidencies/index', compact('incidencies'));
     }
@@ -78,7 +76,7 @@ class IncidenciesController extends Controller
      */
     public function edit($id)
     {
-        $incidencia = Incidencia::find($id);
+        $incidencia = Incidencia::findOrFail($id);
 
         return view('gestio/incidencies/edit', compact('incidencia'));
     }

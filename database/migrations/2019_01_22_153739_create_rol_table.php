@@ -13,10 +13,11 @@ class CreateRolTable extends Migration
      */
     public function up()
     {
-        Schema::create('ROL', function (Blueprint $table) {
-            $table->increments('id_rol');
+        Schema::create('rols', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('nom_rol')->unique();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 
@@ -27,8 +28,6 @@ class CreateRolTable extends Migration
      */
     public function down()
     {
-        Schema::table('ROL', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('rols');
     }
 }

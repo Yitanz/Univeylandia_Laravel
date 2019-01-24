@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHorarisTable extends Migration
+class CreateServeiZonaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateHorarisTable extends Migration
      */
     public function up()
     {
-        Schema::create('horaris', function (Blueprint $table) {
+        Schema::create('serveis_zones', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('torn');
+            $table->unsignedInteger('id_zona');
+            $table->foreign('id_zona')->references('id')->on('zones');
+            $table->unsignedInteger('id_servei');
+            $table->foreign('id_servei')->references('id')->on('serveis');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
@@ -28,6 +31,6 @@ class CreateHorarisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('horaris');
+        Schema::dropIfExists('serveis_zones');
     }
 }

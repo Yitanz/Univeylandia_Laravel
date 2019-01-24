@@ -14,30 +14,31 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id_users');
+            $table->increments('id');
             $table->string('nom');
             $table->string('cognom1');
             $table->string('cognom2')->nullable();
             $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->date('data_naixement');
             $table->string('adreca');
             $table->string('ciutat');
             $table->string('provincia');
-            $table->unsignedInteger('codi_postal');
+            $table->string('codi_postal');
             $table->string('tipus_document');
             $table->string('numero_document');
             $table->string('sexe');
             $table->string('telefon');
             $table->unsignedInteger('id_rol');
-            $table->foreign('id_rol')->references('id_rol')->on('ROL');
-            $table->unsignedInteger('id_dades_empleat');
-            $table->foreign('id_dades_empleat')->references('id_dades_empleat')->on('DADES_EMPLEAT');
+            $table->foreign('id_rol')->references('id')->on('rols');
+            $table->unsignedInteger('id_dades_empleat')->nullable();
+            $table->foreign('id_dades_empleat')->references('id')->on('dades_empleats');
             $table->boolean('actiu');
-            $table->string('hash');
             $table->rememberToken();
-            $table->timestamps();
-        }); 
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+        });
     }
 
     /**

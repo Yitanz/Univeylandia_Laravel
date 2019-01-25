@@ -6,11 +6,12 @@ use Illuminate\Http\Request;
 
 class paginesParc extends Controller
 {
-  public function inici(){
+  public function inici()
+  {
+    return view("vistesparc/index");
 
-      return view("vistesparc/index");
-
-    }
+  }
+  
     public function noticies(){
 
       return view("vistesparc/noticies");

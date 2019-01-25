@@ -10,81 +10,84 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-  route::get('/',"paginesParc@inici");
-  route::get('/noticies',"paginesParc@noticies");
-  route::get('/promocions',"paginesParc@promocions");
-  route::get('/atraccions',"paginesParc@atraccions");
-  route::get('/hotel',"paginesParc@hotel");
-  route::get('/habitacions',"paginesParc@habitacions");
-  route::get('/restaurant',"paginesParc@restaurant");
-  route::get('/parc',"paginesParc@parc");
-  route::get('/parcHotel',"paginesParc@parcHotel");
-  route::get('/gestio',"paginesParc@gestio");
-  route::get('/login',"paginesParc@login");
-
+/*
+ Route::get('/',"paginesParc@inici");
+ Route::get('/noticies',"paginesParc@noticies");
+ Route::get('/promocions',"paginesParc@promocions");
+ Route::get('/atraccions',"paginesParc@atraccions");
+ Route::get('/hotel',"paginesParc@hotel");
+ Route::get('/habitacions',"paginesParc@habitacions");
+ Route::get('/restaurant',"paginesParc@restaurant");
+ Route::get('/parc',"paginesParc@parc");
+ Route::get('/parcHotel',"paginesParc@parcHotel");
+ Route::get('/gestio',"paginesParc@gestio");
+ Route::get('/login',"paginesParc@login");
+ */
 /**
 *Links pagines parc
 */
-  route::any('/', array('as' => 'inici','uses' => 'paginesParc@inici'));
-  route::any('/noticies', array('as' => 'noticies','uses' => 'paginesParc@noticies'));
-  route::any('/promocions', array('as' => 'promocions','uses' => 'paginesParc@promocions'));
-  route::any('/atraccions', array('as' => 'atraccions','uses' => 'paginesParc@atraccions'));
-  route::any('/habitacions', array('as' => 'habitacions','uses' => 'paginesParc@habitacions'));
-  route::any('/restaurant', array('as' => 'restaurant','uses' => 'paginesParc@restaurant'));
-  route::any('/parc', array('as' => 'parc','uses' => 'paginesParc@parc'));
-  route::any('/parcHotel', array('as' => 'parcHotel','uses' => 'paginesParc@parcHotel'));
-  route::any('/gestio', array('as' => 'gestio','uses' => 'paginesParc@gestio'));
-  route::any('/login', array('as' => 'login','uses' => 'paginesParc@login'));
-
-
-/**
-*routes intranetparc
+/*
+ Route::any('/', array('as' => 'inici','uses' => 'paginesParc@inici'));
+ Route::any('/noticies', array('as' => 'noticies','uses' => 'paginesParc@noticies'));
+ Route::any('/promocions', array('as' => 'promocions','uses' => 'paginesParc@promocions'));
+ Route::any('/atraccions', array('as' => 'atraccions','uses' => 'paginesParc@atraccions'));
+ Route::any('/habitacions', array('as' => 'habitacions','uses' => 'paginesParc@habitacions'));
+ Route::any('/restaurant', array('as' => 'restaurant','uses' => 'paginesParc@restaurant'));
+ Route::any('/parc', array('as' => 'parc','uses' => 'paginesParc@parc'));
+ Route::any('/parcHotel', array('as' => 'parcHotel','uses' => 'paginesParc@parcHotel'));
+ Route::any('/login', array('as' => 'login','uses' => 'paginesParc@login'));
+ Route::any('/gestio', array('as' => 'gestio','uses' => 'intranetController@inici'));
 */
-  route::get('/gestioClients',"intranetController@gestioClients");
-  route::get('/inserirClients',"intranetController@inserirClients");
+ /**
+  * routes intranetparc
+  */
 
-  route::get('/gestioAtraccions',"intranetController@gestioAtraccions");
-  route::get('/inserirAtraccions',"intranetController@inserirAtraccions");
+/*
+  Route::get('/gestio/clients',"intranetController@gestioClients");
+  Route::get('/gestio/clients/inserir',"intranetController@inserirClients");
 
-  route::get('/gestioEmpleats',"intranetController@gestioEmpleats");
-  route::get('/inserirEmpleats',"intranetController@inserirEmpleats");
+  Route::get('/gestio/atraccions',"intranetController@gestioAtraccions");
+  Route::get('/gestio/atraccions/inserir',"intranetController@inserirAtraccions");
 
-  route::get('/gestioIncidencia',"intranetController@gestioIncidencia");
-  route::get('/inserirIncidencia',"intranetController@inserirIncidencia");
+  Route::get('/gestio/empleats',"intranetController@gestioEmpleats");
+  Route::get('/gestio/empleats/inserir',"intranetController@inserirEmpleats");
 
-  route::get('/gestioNoticies',"intranetController@gestioNoticies");
-  route::get('/inserirNoticia',"intranetController@inserirNoticia");
+  Route::get('/gestioIncidencia',"intranetController@gestioIncidencia");
+  Route::get('/inserirIncidencia',"intranetController@inserirIncidencia");
 
-  route::get('/gestioServeis',"intranetController@gestioServeis");
-  route::get('/inserirServei',"intranetController@inserirServei");
+  Route::get('/gestioNoticies',"intranetController@gestioNoticies");
+  Route::get('/inserirNoticia',"intranetController@inserirNoticia");
 
-/**
-*Links intranetparc
+  Route::get('/gestioServeis',"intranetController@gestioServeis");
+  Route::get('/inserirServei',"intranetController@inserirServei");
+*/
+  /**
+   * Links intranetparc
+   */
+  /*
+  Route::any('/gestioClients', array('as' => 'gestioClients','uses' => 'intranetController@gestioClients'));
+  Route::any('/inserirClients', array('as' => 'inserirClients','uses' => 'intranetController@inserirClients'));
+
+  Route::any('/gestioAtraccions', array('as' => 'gestioAtraccions','uses' => 'intranetController@gestioAtraccions'));
+  Route::any('/inserirAtraccions', array('as' => 'inserirAtraccions','uses' => 'intranetController@inserirAtraccions'));
+
+  Route::any('/gestioEmpleats', array('as' => 'gestioEmpleats','uses' => 'intranetController@gestioEmpleats'));
+  Route::any('/inserirEmpleats', array('as' => 'inserirEmpleats','uses' => 'intranetController@inserirEmpleats'));
+
+  Route::any('/gestioIncidencia', array('as' => 'gestioIncidencia','uses' => 'intranetController@gestioIncidencia'));
+  Route::any('/inserirIncidencia', array('as' => 'inserirIncidencia','uses' => 'intranetController@inserirIncidencia'));
+
+  Route::any('/gestioNoticies', array('as' => 'gestioNoticies','uses' => 'intranetController@gestioNoticies'));
+  Route::any('/inserirNoticia', array('as' => 'inserirNoticia','uses' => 'intranetController@inserirNoticia'));
+
+  Route::any('/gestioServeis', array('as' => 'gestioServeis','uses' => 'intranetController@gestioServeis'));
+  Route::any('/inserirServei', array('as' => 'inserirServei','uses' => 'intranetController@inserirServei'));
+
+  Auth::routes(['verify' => true]);
+
+  Route::get('/home', 'HomeController@index')->name('home');
+
+  Route::resource('incidencies', 'IncidenciesController');
 */
 
-route::any('/gestioClients', array('as' => 'gestioClients','uses' => 'intranetController@gestioClients'));
-route::any('/inserirClients', array('as' => 'inserirClients','uses' => 'intranetController@inserirClients'));
-
-route::any('/gestioAtraccions', array('as' => 'gestioAtraccions','uses' => 'intranetController@gestioAtraccions'));
-route::any('/inserirAtraccions', array('as' => 'inserirAtraccions','uses' => 'intranetController@inserirAtraccions'));
-
-route::any('/gestioEmpleats', array('as' => 'gestioEmpleats','uses' => 'intranetController@gestioEmpleats'));
-route::any('/inserirEmpleats', array('as' => 'inserirEmpleats','uses' => 'intranetController@inserirEmpleats'));
-
-route::any('/gestioIncidencia', array('as' => 'gestioIncidencia','uses' => 'intranetController@gestioIncidencia'));
-route::any('/inserirIncidencia', array('as' => 'inserirIncidencia','uses' => 'intranetController@inserirIncidencia'));
-
-route::any('/gestioNoticies', array('as' => 'gestioNoticies','uses' => 'intranetController@gestioNoticies'));
-route::any('/inserirNoticia', array('as' => 'inserirNoticia','uses' => 'intranetController@inserirNoticia'));
-
-route::any('/gestioServeis', array('as' => 'gestioServeis','uses' => 'intranetController@gestioServeis'));
-route::any('/inserirServei', array('as' => 'inserirServei','uses' => 'intranetController@inserirServei'));
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+  Route::resource('/gestio/atraccions', 'AtraccionsController');

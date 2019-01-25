@@ -4,7 +4,7 @@
       <div class="sidebar-sticky">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link" href="../index.php">
+            <a class="nav-link" href="">
               <span data-feather="home"></span>
               Inici
             </a>
@@ -19,10 +19,10 @@
           </li>
           <ul class="nav flex-column collapse" id="submenu0" data-parent="#sidebar">
             <li class="nav-item">
-              <a class="nav-link nav-interior " href="{{URL::route('inserirEmpleats')}}"><span data-feather="user-plus"></span>Crear Empleat</a>
+              <a class="nav-link nav-interior " href=""><span data-feather="user-plus"></span>Crear Empleat</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-interior" href="{{URL::route('gestioEmpleats')}}"><span data-feather="file-text"></span>Gestionar Empleats</a>
+              <a class="nav-link nav-interior" href=""><span data-feather="file-text"></span>Gestionar Empleats</a>
             </li>
             </li>
           </ul>
@@ -36,10 +36,10 @@
           </li>
           <ul class="nav flex-column collapse" id="submenu1" data-parent="#sidebar">
             <li class="nav-item">
-              <a class="nav-link nav-interior" href="{{URL::route('inserirClients')}}"><span data-feather="user-plus"></span>Crear Client</a>
+              <a class="nav-link nav-interior" href=""><span data-feather="user-plus"></span>Crear Client</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-interior" href="{{URL::route('gestioClients')}}"><span data-feather="file-text"></span>Gestionar Clients</a>
+              <a class="nav-link nav-interior" href=""><span data-feather="file-text"></span>Gestionar Clients</a>
             </li>
           </ul>
 
@@ -52,10 +52,10 @@
           </li>
           <ul class="nav flex-column collapse show" id="submenu3" data-parent="#sidebar">
             <li class="nav-item">
-              <a class="nav-link nav-interior" href="{{URL::route('inserirAtraccions')}}"><span data-feather="plus-square"></span>Crear Atracció</a>
+              <a class="nav-link nav-interior" href=""><span data-feather="plus-square"></span>Crear Atracció</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-interior active" href="{{URL::route('gestioAtraccions')}}"><span data-feather="file-text"></span>Gestionar Atraccions</a>
+              <a class="nav-link nav-interior active" href=""><span data-feather="file-text"></span>Gestionar Atraccions</a>
             </li>
           </ul>
 
@@ -146,10 +146,10 @@
 
           <ul class="nav flex-column collapse" id="submenu5" data-parent="#sidebar">
             <li class="nav-item">
-              <a class="nav-link nav-interior" href="{{URL::route('inserirIncidencia')}}"><span data-feather="plus-square"></span>Crear Inicidència</a>
+              <a class="nav-link nav-interior" href=""><span data-feather="plus-square"></span>Crear Inicidència</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-interior" href="{{URL::route('gestioIncidencia')}}"><span data-feather="file-text"></span>Gestionar Inicidències</a>
+              <a class="nav-link nav-interior" href=""><span data-feather="file-text"></span>Gestionar Inicidències</a>
             </li>
           </ul>
 
@@ -204,10 +204,10 @@
           </li>
           <ul class="nav flex-column collapse" id="submenu9" data-parent="#sidebar">
             <li class="nav-item">
-              <a class="nav-link nav-interior" href="{{URL::route('inserirNoticia')}}"><span data-feather="user-plus"></span>Crear Noticia</a>
+              <a class="nav-link nav-interior" href=""><span data-feather="user-plus"></span>Crear Noticia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-interior" href="{{URL::route('gestioNoticies')}}"><span data-feather="file-text"></span>Gestionar Noticia</a>
+              <a class="nav-link nav-interior" href=""><span data-feather="file-text"></span>Gestionar Noticia</a>
             </li>
           </ul>
         </ul>

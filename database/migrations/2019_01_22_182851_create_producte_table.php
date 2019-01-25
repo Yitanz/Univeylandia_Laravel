@@ -15,11 +15,10 @@ class CreateProducteTable extends Migration
     {
         Schema::create('productes', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('tipus_producte')->references('id')->on('tipus_producte');;
+            $table->unsignedInteger('tipus_producte');
             $table->text('descripcio');
             $table->boolean('estat');
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+            $table->timestamps();
         });
     }
 

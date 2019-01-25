@@ -6,64 +6,97 @@ use Illuminate\Http\Request;
 
 class intranetController extends Controller
 {
-      public function gestioClients(){
+      public function __construct()
+      {
+            $this->middleware('auth');
+      }
 
-      return view("vistesEmpleats/gestioClients");
+      public function inici()
+      {
+            return view("vistesEmpleats/inici");
+      }
+
+      public function gestioClients()
+      {
+
+            return view("vistesEmpleats/gestioClients");
 
       }
-      public function inserirClients(){
 
-      return view("vistesEmpleats/inserirClients");
+      public function inserirClients()
+      {
 
-      }
-      public function gestioAtraccions(){
-
-      return view("vistesEmpleats/gestioAtraccions");
+            return view("vistesEmpleats/inserirClients");
 
       }
-      public function inserirAtraccions(){
 
-      return view("vistesEmpleats/inserirAtraccions");
+      public function gestioAtraccions()
+      {
 
-      }
-      public function gestioEmpleats(){
-
-      return view("vistesEmpleats/gestioEmpleats");
+            return view("vistesEmpleats/gestioAtraccions");
 
       }
-      public function inserirEmpleats(){
 
-      return view("vistesEmpleats/inserirEmpleats");
+      public function inserirAtraccions()
+      {
 
-      }
-      public function gestioIncidencia(){
-
-      return view("vistesEmpleats/gestioIncidencia");
+            return view("vistesEmpleats/inserirAtraccions");
 
       }
-      public function inserirIncidencia(){
 
-      return view("vistesEmpleats/inserirIncidencia");
+      public function gestioEmpleats()
+      {
 
-      }
-      public function gestioNoticies(){
-
-      return view("vistesEmpleats/gestioNoticies");
+            return view("vistesEmpleats/gestioEmpleats");
 
       }
-      public function inserirNoticia(){
 
-      return view("vistesEmpleats/inserirNoticia");
+      public function inserirEmpleats()
+      {
 
-      }
-      public function gestioServeis(){
-
-      return view("vistesEmpleats/gestioServeis");
+            return view("vistesEmpleats/inserirEmpleats");
 
       }
-      public function inserirServei(){
 
-      return view("vistesEmpleats/inserirServei");
+      public function gestioIncidencia()
+      {
+
+            return view("vistesEmpleats/gestioIncidencia");
+
+      }
+
+      public function inserirIncidencia()
+      {
+
+            return view("vistesEmpleats/inserirIncidencia");
+
+      }
+
+      public function gestioNoticies()
+      {
+
+            return view("vistesEmpleats/gestioNoticies");
+
+      }
+
+      public function inserirNoticia()
+      {
+
+            return view("vistesEmpleats/inserirNoticia");
+
+      }
+
+      public function gestioServeis()
+      {
+
+            return view("vistesEmpleats/gestioServeis");
+
+      }
+
+      public function inserirServei()
+      {
+
+            return view("vistesEmpleats/inserirServei");
 
       }
 }

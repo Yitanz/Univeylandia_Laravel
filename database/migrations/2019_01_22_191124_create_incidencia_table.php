@@ -24,8 +24,7 @@ class CreateIncidenciaTable extends Migration
             $table->foreign('id_usuari_client')->references('id')->on('users');
             $table->unsignedInteger('id_usuari_empleat')->nullable();
             $table->foreign('id_usuari_empleat')->references('id')->on('users');
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+            $table->timestamps();
         });
     }
 

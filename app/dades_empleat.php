@@ -10,11 +10,13 @@ class dades_empleat extends Model
     protected $table = 'dades_empleats';
 
     protected $fillable = [
-        'titol',
-        'descripcio',
-        'prioritat',
-        'id_estat',
-        'id_usuari_client',
-        'id_usuari_empleat'
+       'codi_seg_social',
+       'num_nomina',
+       'IBAN',
+       'especialitat',
+       'carrec',
+       'data_inici_contracte',
+       'data_fi_contracte',
+       'id_horari'
     ];
 }

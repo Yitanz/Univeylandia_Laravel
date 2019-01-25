@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use \App\dades_Empleat;
+use \App\dades_empleat;
 
 class EmpleatsController extends Controller
 {
@@ -15,7 +15,7 @@ class EmpleatsController extends Controller
      */
     public function index()
     {
-        //
+        return view('gestio/empleats/index');
     }
 
     /**
@@ -38,21 +38,20 @@ class EmpleatsController extends Controller
     {
         //
         
-        $dadesEmpleat = new dades_Empleat;
-
-        $dadesEmpleat-> codi_seg_social=$request->codi_seg_social;
-        $dadesEmpleat-> num_nomina=$request->num_nomina;
-        $dadesEmpleat-> IBAN=$request->IBAN;
-        $dadesEmpleat-> especialitat=$request->especialitat;
-        $dadesEmpleat-> carrec=$request->carrec;
-        $dadesEmpleat-> data_inici_contracte=$request->data_inici_contracte;
-        $dadesEmpleat-> data_fi_contracte=$request->data_fi_contracte;
-        //$dadesEmpleat-> id_horari=$request->1;
-
+        $dadesEmpleat = new dades_empleat([
+            'codi_seg_social' => $request->get('codi_seg_social'),
+            'num_nomina' => $request->get('num_nomina'),
+            'IBAN' => $request->get('IBAN'),
+            'especialitat' => $request->get('especialitat'),
+            'carrec' => $request->get('carrec'),
+            'data_inici_contracte' => $request->get('data_inici_contracte'),
+            'data_fi_contracte' => $request->get('data_fi_contracte'),
+            'id_horari' => $request->get('id_horari')
+        ]);
         $dadesEmpleat->save();
 
         return view('gestio/empleats/create');
-        }
+    }
 
     /**
      * Display the specified resource.
@@ -63,7 +62,7 @@ class EmpleatsController extends Controller
     public function show($id)
     {
         //
-         return view('gestio/empleats/index');
+         
     }
 
     /**

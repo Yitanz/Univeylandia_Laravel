@@ -84,3 +84,5 @@
   Route::resource('gestio/incidencies', 'IncidenciesController');
 
   Route::resource('gestio/empleats', 'EmpleatsController');
+
+  Route::resource('gestio/zones', 'ZonesController');

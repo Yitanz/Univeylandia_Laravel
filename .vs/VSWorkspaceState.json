@@ -5,10 +5,12 @@
     "\\app\\Http",
     "\\app\\Http\\Controllers",
     "\\resources",
-    "\\resources\\views",
+    "\\resources\\lang",
     "\\resources\\views\\gestio",
-    "\\resources\\views\\vistesEmpleats"
+    "\\resources\\views\\gestio\\empleats",
+    "\\resources\\views\\gestio\\incidencies",
+    "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\vistesEmpleats\\gestioEmpleats.blade.php",
+  "SelectedNode": "\\app\\Console",
   "PreviewInSolutionExplorer": false
 }

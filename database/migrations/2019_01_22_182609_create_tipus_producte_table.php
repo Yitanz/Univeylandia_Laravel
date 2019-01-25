@@ -21,7 +21,8 @@ class CreateTipusProducteTable extends Migration
             $table->string('foto_path');
             $table->string('foto_path_aigua');
             $table->integer('preu');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

@@ -16,7 +16,8 @@ class CreateHorarisTable extends Migration
         Schema::create('horaris', function (Blueprint $table) {
             $table->increments('id');
             $table->string('torn');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

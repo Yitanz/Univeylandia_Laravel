@@ -65,9 +65,9 @@
                         <td>{{ $incidencia->descripcio }}</td>
                         <td>{{ $incidencia->prioritat }}</td>
                         <td>{{ $incidencia->id_estat }}</td>
-                        <td>{{ $incidencia->id_usuari_client }}</td>
-                        <td>{{ $incidencia->id_usuari_empleat }}</td>
-                        <td><a class="btn btn-primary" href="{{ route('incidencies.edit', $incidencia->id) }}">Modificar</a></td>
+                        <td>{{ $incidencia->id_usuari_reportador }}</td>
+                        <td>{{ $incidencia->id_usuari_assignat }}</td>
+                        <td><a class="btn btn-primary" href="{{ route('incidencies.edit', $incidencia->id) }}">Assignar</a></td>
                         <td>
                             <form action="{{ route('incidencies.destroy', $incidencia->id)}}" method="post">
                                 @csrf

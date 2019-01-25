@@ -51,7 +51,7 @@ class IncidenciesController extends Controller
             'descripcio' => $request->get('description'),
             'prioritat' => $request->get('priority'),
             'id_estat' => 1,
-            'id_usuari_client' => $user->id,
+            'id_usuari_reportador' => $user->id,
         ]);
         $incidencia->save();
         return redirect('/gestio/incidencies')->with('success', 'Incidència creada correctament');

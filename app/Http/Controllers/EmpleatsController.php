@@ -63,6 +63,7 @@ class EmpleatsController extends Controller
     public function show($id)
     {
         //
+         return view('gestio/empleats/index');
     }
 
     /**

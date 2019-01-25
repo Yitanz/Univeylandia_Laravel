@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
+    "\\resources",
+    "\\resources\\lang",
+    "\\resources\\views\\gestio",
+    "\\resources\\views\\gestio\\empleats",
+    "\\resources\\views\\gestio\\incidencies",
+    "\\routes"
+  ],
+  "SelectedNode": "\\app\\Console",
+  "PreviewInSolutionExplorer": false
+}

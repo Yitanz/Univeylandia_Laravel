@@ -16,7 +16,8 @@ class CreateTipusAtraccioTable extends Migration
         Schema::create('tipus_atraccions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('tipus');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

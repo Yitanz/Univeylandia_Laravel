@@ -17,14 +17,16 @@ class CreateIncidenciaTable extends Migration
             $table->increments('id');
             $table->string('titol');
             $table->text('descripcio');
-            $table->string('prioritat')->nullable();
+            $table->unsignedInteger('id_prioritat');
+            $table->foreign('id_prioritat')->references('id')->on('tipus_prioritat');
             $table->unsignedInteger('id_estat');
             $table->foreign('id_estat')->references('id')->on('estat_incidencies');
-            $table->unsignedInteger('id_usuari_client');
-            $table->foreign('id_usuari_client')->references('id')->on('users');
-            $table->unsignedInteger('id_usuari_empleat')->nullable();
-            $table->foreign('id_usuari_empleat')->references('id')->on('users');
-            $table->timestamps();
+            $table->unsignedInteger('id_usuari_reportador');
+            $table->foreign('id_usuari_reportador')->references('id')->on('users');
+            $table->unsignedInteger('id_usuari_assignat')->nullable();
+            $table->foreign('id_usuari_assignat')->references('id')->on('users');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

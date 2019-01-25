@@ -16,7 +16,8 @@ class CreateEstatIncidenciaTable extends Migration
         Schema::create('estat_incidencies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nom_estat');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

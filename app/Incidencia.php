@@ -11,9 +11,9 @@ class Incidencia extends Model
     protected $fillable = [
         'titol',
         'descripcio',
-        'prioritat',
+        'id_prioritat',
         'id_estat',
-        'id_usuari_client',
-        'id_usuari_empleat'
+        'id_usuari_reportador',
+        'id_usuari_assignat'
     ];
 }

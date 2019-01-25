@@ -36,7 +36,8 @@ class CreateUsersTable extends Migration
             $table->foreign('id_dades_empleat')->references('id')->on('dades_empleats');
             $table->boolean('actiu');
             $table->rememberToken();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         }); 
     }
 

@@ -19,7 +19,10 @@ class CreateServeiZonaTable extends Migration
             $table->foreign('id_zona')->references('id')->on('zones');
             $table->unsignedInteger('id_servei');
             $table->foreign('id_servei')->references('id')->on('serveis');
-            $table->timestamps();
+            $table->unsignedInteger('id_empleat');
+            $table->foreign('id_empleat')->references('id')->on('users');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

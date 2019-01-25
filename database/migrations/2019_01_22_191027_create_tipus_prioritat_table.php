@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLiniaVentaTable extends Migration
+class CreateTipusPrioritatTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateLiniaVentaTable extends Migration
      */
     public function up()
     {
-        Schema::create('linia_ventes', function (Blueprint $table) {
+        Schema::create('tipus_prioritat', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_venta');
-            $table->foreign('id_venta')->references('id')->on('venta_productes');
-            $table->unsignedInteger('producte');
-            $table->foreign('producte')->references('id')->on('productes');
-            $table->integer('quantitat');
+            $table->string('nom_prioritat');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
@@ -32,6 +28,6 @@ class CreateLiniaVentaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('linia_ventes');
+        Schema::dropIfExists('tipus_prioritat');
     }
 }

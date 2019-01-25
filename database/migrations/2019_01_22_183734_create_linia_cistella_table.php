@@ -20,6 +20,8 @@ class CreateLiniaCistellaTable extends Migration
             $table->unsignedInteger('producte');
             $table->foreign('producte')->references('id')->on('productes');
             $table->integer('quantitat');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

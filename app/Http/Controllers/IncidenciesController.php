@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use \App\Incidencia;
+use \App\PrioritatIncidencia;
+use \App\User;
 use Auth;
 
 class IncidenciesController extends Controller
@@ -27,7 +30,9 @@ class IncidenciesController extends Controller
      */
     public function create()
     {
-        return view('gestio/incidencies/create');
+        $tipus_prioritat = DB::table('tipus_prioritat')->get();
+
+        return view('gestio/incidencies/create', compact('tipus_prioritat'));
     }
 
     /**
@@ -49,7 +54,7 @@ class IncidenciesController extends Controller
         $incidencia = new Incidencia([
             'titol' => $request->get('title'),
             'descripcio' => $request->get('description'),
-            'prioritat' => $request->get('priority'),
+            'id_prioritat' => $request->get('priority'),
             'id_estat' => 1,
             'id_usuari_reportador' => $user->id,
         ]);
@@ -65,7 +70,15 @@ class IncidenciesController extends Controller
      */
     public function show($id)
     {
-        //
+        $incidencia = Incidencia::findOrFail($id);
+
+        $prioritats = PrioritatIncidencia::all();
+
+        $treballadors = User::where('id_rol', 3)
+        ->where('actiu', 1)
+        ->get();
+
+        return view('gestio/incidencies/show', compact(['incidencia', 'prioritats', 'treballadors']));
     }
 
     /**
@@ -78,7 +91,13 @@ class IncidenciesController extends Controller
     {
         $incidencia = Incidencia::findOrFail($id);
 
-        return view('gestio/incidencies/edit', compact('incidencia'));
+        $prioritats = PrioritatIncidencia::all();
+
+        $treballadors = User::where('id_rol', 3)
+        ->where('actiu', 1)
+        ->get();
+
+        return view('gestio/incidencies/edit', compact(['incidencia', 'prioritats', 'treballadors']));
     }
 
     /**
@@ -90,7 +109,23 @@ class IncidenciesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title'=>'required',
+            'description'=> 'required',
+            'priority' => 'required',
+            'assigned-employee' => 'required'
+        ]);
+
+        $incidencia = Incidencia::findOrFail($id);
+
+        $incidencia->titol = $request->get('title');
+        $incidencia->descripcio = $request->get('description');
+        $incidencia->id_prioritat = $request->get('priority');
+        $incidencia->id_estat = 2;
+        $incidencia->id_usuari_assignat = $request->get('assigned-employee');
+        $incidencia->save();
+
+        return redirect('gestio/incidencies')->with('success', 'Incidència assignada correctament');
     }
 
     /**
@@ -101,6 +136,10 @@ class IncidenciesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $incidencia = Incidencia::findOrFail($id);
+
+        $incidencia->delete();
+
+        return redirect('gestio/incidencies')->with('success', 'Incidència eliminada correctament');
     }
 }

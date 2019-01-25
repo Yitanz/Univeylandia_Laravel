@@ -11,7 +11,7 @@
         margin-top: 40px;
       }
     </style>
-    <div class="uper d-none">
+    <div class="uper">
       @if(session()->get('success'))
         <div class="alert alert-success">
           {{ session()->get('success') }}
@@ -33,11 +33,11 @@
             <form method="post" style="margin-top=50px;">
               <div class="form-row">
                 <div class="col-10">
-                  <input class="form-control" type="text" name="busqueda_habitacio" placeholder="Filtrar...">
+                  <input class="form-control" type="text" name="filtre" placeholder="Filtrar...">
                 </div>
                 <div class="form-group row">
                   <div class="offset-sm-2 col-sm-10">
-                    <input type="submit" class="btn btn-primary" name="buscar_habitacio" value="Filtrar">
+                    <input type="submit" class="btn btn-primary" name="buscar" value="Filtrar">
                   </div>
                 </div>
               </div>
@@ -63,10 +63,11 @@
                         <td>{{ $incidencia->id }}</td>
                         <td>{{ $incidencia->titol }}</td>
                         <td>{{ $incidencia->descripcio }}</td>
-                        <td>{{ $incidencia->prioritat }}</td>
+                        <td>{{ $incidencia->id_prioritat }}</td>
                         <td>{{ $incidencia->id_estat }}</td>
                         <td>{{ $incidencia->id_usuari_reportador }}</td>
                         <td>{{ $incidencia->id_usuari_assignat }}</td>
+                        <td><a class="btn btn-success" href="{{ route('incidencies.show', $incidencia->id) }}">Mostrar</a></td>
                         <td><a class="btn btn-primary" href="{{ route('incidencies.edit', $incidencia->id) }}">Assignar</a></td>
                         <td>
                             <form action="{{ route('incidencies.destroy', $incidencia->id)}}" method="post">

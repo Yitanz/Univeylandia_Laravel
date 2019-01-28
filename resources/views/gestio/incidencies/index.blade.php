@@ -11,13 +11,13 @@
         margin-top: 40px;
       }
     </style>
+    @if(session()->get('success'))
     <div class="uper">
-      @if(session()->get('success'))
         <div class="alert alert-success">
           {{ session()->get('success') }}
         </div>
-      @endif
     </div>
+    @endif
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">Administrar Incidències</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
@@ -70,7 +70,8 @@
                         <td><a class="btn btn-success" href="{{ route('incidencies.show', $incidencia->id) }}">Mostrar</a></td>
                         <td><a class="btn btn-primary" href="{{ route('incidencies.edit', $incidencia->id) }}">Assignar</a></td>
                         <td>
-                            <form action="{{ route('incidencies.destroy', $incidencia->id)}}" method="post">
+                            <form action="{{ route('incidencies.destroy', $incidencia->id)}}" method="post" 
+                            onsubmit="return confirm('Estàs segur de voler eliminar la incidència?');">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit">Eliminar</button>

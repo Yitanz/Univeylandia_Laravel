@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use \App\Servei;
 
 class ServeisController extends Controller
 {
@@ -14,7 +15,9 @@ class ServeisController extends Controller
      */
     public function index()
     {
-        //$serveis
+      $serveis = Servei::all();
+
+      return view('gestio/serveis/index', compact('serveis'));
     }
 
     /**

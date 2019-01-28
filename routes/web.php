@@ -61,10 +61,10 @@
    */
   Route::any('/gestioClients', array('as' => 'gestioClients','uses' => 'intranetController@gestioClients'));
   Route::any('/inserirClients', array('as' => 'inserirClients','uses' => 'intranetController@inserirClients'));
-  
+
   Route::any('/gestioAtraccions', array('as' => 'gestioAtraccions','uses' => 'intranetController@gestioAtraccions'));
   Route::any('/inserirAtraccions', array('as' => 'inserirAtraccions','uses' => 'intranetController@inserirAtraccions'));
-  
+
   Route::any('/gestioEmpleats', array('as' => 'gestioEmpleats','uses' => 'intranetController@gestioEmpleats'));
   Route::any('/inserirEmpleats', array('as' => 'inserirEmpleats','uses' => 'intranetController@inserirEmpleats'));
   /*
@@ -73,7 +73,7 @@
   */
   Route::any('/gestioNoticies', array('as' => 'gestioNoticies','uses' => 'intranetController@gestioNoticies'));
   Route::any('/inserirNoticia', array('as' => 'inserirNoticia','uses' => 'intranetController@inserirNoticia'));
-  
+
   Route::any('/gestioServeis', array('as' => 'gestioServeis','uses' => 'intranetController@gestioServeis'));
   Route::any('/inserirServei', array('as' => 'inserirServei','uses' => 'intranetController@inserirServei'));
 
@@ -86,3 +86,9 @@
   Route::resource('gestio/empleats', 'EmpleatsController');
 
   Route::resource('gestio/zones', 'ZonesController');
+
+
+
+
+
+  Route::resource('gestio/serveis', 'ServeisController');

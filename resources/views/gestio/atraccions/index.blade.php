@@ -12,6 +12,43 @@
       {{ session()->get('success') }}
     </div><br />
   @endif
+
+  <div class="container">
+		<form action="/gestio/incidencies" method="POST" role="search">
+			{{ csrf_field() }}
+			<div class="input-group">
+				<input type="text" class="form-control" name="q"
+					placeholder="Search users"> <span class="input-group-btn">
+					<button type="submit" class="btn btn-default">
+						<span class="glyphicon glyphicon-search"></span>
+					</button>
+				</span>
+			</div>
+		</form>
+		<div class="container">
+			@if(isset($details))
+			<p> The Search results for your query <b> {{ $query }} </b> are :</p>
+			<h2>Sample User details</h2>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach($details as $user)
+					<tr>
+						<td>{{$user->nom_atraccio}}</td>
+					</tr>
+					@endforeach
+				</tbody>
+			</table>
+			@elseif(isset($message))
+			<p>{{ $message }}</p>
+			@endif
+		</div>
+
+
   <table class="table table-striped">
     <thead>
         <tr>
@@ -27,19 +64,19 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($atraccio as $atraccions)
+        @foreach($atraccionetes as $atraccio)
         <tr>
-            <td>{{$atraccions->id}}</td>
-            <td>{{$atraccions->nom_atraccio}}</td>
-            <td>{{$atraccions->tipus_atraccio}}</td>
-            <td>{{$atraccions->data_inauguracio}}</td>
-            <td>{{$atraccions->altura_min}}</td>
-            <td>{{$atraccions->altura_max}}</td>
-            <td>{{$atraccions->accessibilitat}}</td>
-            <td>{{$atraccions->acces_express}}</td>
-            <td><a href="{{ route('atraccions.edit',$atraccions->id)}}" class="btn btn-primary">Edit</a></td>
+            <td>{{$atraccio->id}}</td>
+            <td>{{$atraccio->nom_atraccio}}</td>
+            <td>{{$atraccio->nom }}</td>
+            <td>{{$atraccio->data_inauguracio}}</td>
+            <td>{{$atraccio->altura_min}}</td>
+            <td>{{$atraccio->altura_max}}</td>
+            <td>{{$atraccio->accessibilitat}}</td>
+            <td>{{$atraccio->acces_express}}</td>
+            <td><a href="{{ route('atraccions.edit',$atraccio->id)}}" class="btn btn-primary">Edit</a></td>
             <td>
-                <form action="{{ route('atraccions.destroy', $atraccions->id)}}" method="post">
+                <form action="{{ route('atraccions.destroy', $atraccio->id)}}" method="post">
                   @csrf
                   @method('DELETE')
                   <button class="btn btn-danger" type="submit">Delete</button>

@@ -12,13 +12,14 @@
       <h1 class="font-weight-bold text-center text-uppercase">Atraccions Extremes</1>
     </div>
   </div>
+  @foreach($atraccionetes as $atraccio)
   <div class="row">
       <div class="col-sm-4">
         <div class="container">
           <div class="card" style="width:400px">
             <img class="card-img-top" src="/img/tornado.jpg" alt="Card image" style="width:100%" >
             <div class="card-body">
-              <h4 class="card-title">Tornado</h4>
+              <h4 class="card-title"> {{ $atraccio->nom_atraccio }}</h4>
               <p class="card-text">Una atracció 3xM: Màxima velocitat Màxima adrenalina i Màxima Seguritat</p>
             </div>
           </div>

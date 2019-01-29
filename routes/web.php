@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
+
  Route::get('/',"paginesParc@inici");
  Route::get('/noticies',"paginesParc@noticies");
  Route::get('/promocions',"paginesParc@promocions");
@@ -22,11 +22,7 @@
  Route::get('/parcHotel',"paginesParc@parcHotel");
  Route::get('/gestio',"paginesParc@gestio");
  Route::get('/login',"paginesParc@login");
- */
-/**
-*Links pagines parc
-*/
-/*
+
  Route::any('/', array('as' => 'inici','uses' => 'paginesParc@inici'));
  Route::any('/noticies', array('as' => 'noticies','uses' => 'paginesParc@noticies'));
  Route::any('/promocions', array('as' => 'promocions','uses' => 'paginesParc@promocions'));
@@ -37,12 +33,6 @@
  Route::any('/parcHotel', array('as' => 'parcHotel','uses' => 'paginesParc@parcHotel'));
  Route::any('/login', array('as' => 'login','uses' => 'paginesParc@login'));
  Route::any('/gestio', array('as' => 'gestio','uses' => 'intranetController@inici'));
-*/
- /**
-  * routes intranetparc
-  */
-
-/*
   Route::get('/gestio/clients',"intranetController@gestioClients");
   Route::get('/gestio/clients/inserir',"intranetController@inserirClients");
 
@@ -60,11 +50,6 @@
 
   Route::get('/gestioServeis',"intranetController@gestioServeis");
   Route::get('/inserirServei',"intranetController@inserirServei");
-*/
-  /**
-   * Links intranetparc
-   */
-  /*
   Route::any('/gestioClients', array('as' => 'gestioClients','uses' => 'intranetController@gestioClients'));
   Route::any('/inserirClients', array('as' => 'inserirClients','uses' => 'intranetController@inserirClients'));
 
@@ -87,7 +72,16 @@
 
   Route::get('/home', 'HomeController@index')->name('home');
 
-  Route::resource('incidencies', 'IncidenciesController');
-*/
+// Route::resource('/gestio/incidencies', 'IncidenciesController');
 
   Route::resource('/gestio/atraccions', 'AtraccionsController');
+
+  Route::any('/gestio/atraccions/index',function(){
+      $q = Input::get ( 'q' );
+
+      $user = Atraccion::where('nom_atraccio','LIKE','%'.$q.'%')->get();
+      if(count($user) > 0)
+          return view('gestio/atraccions/index')->withDetails($user)->withQuery ( $q );
+      else return view ('gestio/atraccions/index')->withMessage('No Details found. Try to search again !');
+  });
+//  Route::resource('/gestio/prorductes', 'ProductesController');

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Atraccion;
+use \App\TipusAtraccions;
+use Illuminate\Support\Facades\DB;
 
 class AtraccionsController extends Controller
 {
@@ -14,9 +16,25 @@ class AtraccionsController extends Controller
      */
     public function index()
     {
-              $atraccio = Atraccion::all();
-        return view('gestio/atraccions/index', compact('atraccio'));
+      $atraccionetes = DB::table('tipus_atraccions')
+            ->join('atraccions', 'atraccions.tipus_atraccio', '=', 'tipus_atraccions.id')
+            ->get([
+              'tipus_atraccions.tipus as nom',
+              'tipus_atraccions.id as id_tipus',
+              'atraccions.nom_atraccio',
+              'atraccions.tipus_atraccio',
+              'atraccions.data_inauguracio',
+              'atraccions.altura_min',
+              'atraccions.altura_max',
+              'atraccions.accessibilitat',
+              'atraccions.acces_express',
+              'atraccions.id'
 
+            ]);
+
+        $atraccions = Atraccion::all();
+        return view('gestio/atraccions/index', compact('atraccionetes'));
+      
 
     }
 
@@ -60,8 +78,8 @@ class AtraccionsController extends Controller
      */
     public function show($id)
     {
+      $atraccio  = Atraccion::findOrFail($id);
       return view('gestio/atraccions/show');
-
     }
 
     /**
@@ -72,7 +90,10 @@ class AtraccionsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $atraccio = Atraccion::find($id);
+        $tipus = TipusAtraccions::all();
+
+        return view('gestio/atraccions/edit', compact('atraccio','tipus'));
     }
 
     /**
@@ -84,7 +105,17 @@ class AtraccionsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $atraccio = Atraccion::findOrFail($id);
+
+        $atraccio->nom_atraccio = $request->get('nom');
+        $atraccio->tipus_atraccio = $request->get('tipusatraccio');
+        $atraccio->data_inauguracio = $request->get('datainauguracio');
+        $atraccio->altura_min = $request->get('alturamin');
+        $atraccio->altura_max = $request->get('alturamax');
+        $atraccio->accessibilitat = $request->get('accessible');
+        $atraccio->acces_express = $request->get('accesexpress');
+        $atraccio->save();
+        return redirect('/gestio/atraccions')->with('success', 'atraccio modificada');
     }
 
     /**
@@ -95,6 +126,9 @@ class AtraccionsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $atraccio = Atraccion::find($id);
+        $atraccio->delete();
+        return redirect('/gestio/atraccions')->with('success', 'atraccio suprimida correctament');
+
     }
 }

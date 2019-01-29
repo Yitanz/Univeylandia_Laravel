@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Atraccion extends Model
 {
+
      protected $fillable = [
     'nom_atraccio',
     'tipus_atraccio',

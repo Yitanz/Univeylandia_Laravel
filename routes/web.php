@@ -72,10 +72,12 @@
 
   Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::resource('/gestio/incidencies', 'IncidenciesController');
+    Route::resource('/gestio/incidencies', 'IncidenciesController');
 
   Route::resource('/gestio/atraccions', 'AtraccionsController');
 
+  Route::resource('/gestio/Clients', 'ClientsController');
+  
   Route::any('/gestio/atraccions/index',function(){
       $q = Input::get ( 'q' );
 

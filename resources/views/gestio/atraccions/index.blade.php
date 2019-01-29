@@ -74,15 +74,7 @@
             <td>{{$atraccio->altura_max}}</td>
             <td>{{$atraccio->accessibilitat}}</td>
             <td>{{$atraccio->acces_express}}</td>
-            <td><a href="{{ route('atraccions.edit',$atraccio->id)}}" class="btn btn-primary">Edit</a></td>
-            <td>
-                <form action="{{ route('atraccions.destroy', $atraccio->id)}}" method="post">
-                  @csrf
-                  @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Delete</button>
-                </form>
-            </td>
-        </tr>
+            
         @endforeach
     </tbody>
   </table>

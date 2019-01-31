@@ -47,12 +47,11 @@
             </div>
             <div class="col-md-6 mb-3">
               <label for="assigned-employee">Assignar a:</label>
-              <input list="employees" name="assigned-employee" class="form-control form-control-sm">
-              <datalist id="employees" name="assigned-employee">
+              <select id="employees" name="assigned-employee" class="form-control form-control-sm">
               @foreach ($treballadors as $treballador)
                 <option value="{{ $treballador->id }}">{{ $treballador->nom }} {{ $treballador->cognom1 }} {{ $treballador->cognom2 }} {{ $treballador->numero_document }}</option>
               @endforeach
-              </datalist>
+              </select>
             </div>
           </div>
           <button class="btn btn-primary" type="submit">Assignar</button>

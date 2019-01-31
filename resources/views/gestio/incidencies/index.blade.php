@@ -54,7 +54,7 @@
                         <th>Estat</th>
                         <th>Reportador</th>
                         <th>Assignat a</th>
-                        <th colspan="2">Acció</th>
+                        <th colspan="3">Acció</th>
                         </tr>
                     </thead>
                 <tbody>
@@ -67,7 +67,7 @@
                         <td>{{ $incidencia->id_estat }}</td>
                         <td>{{ $incidencia->id_usuari_reportador }}</td>
                         <td>{{ $incidencia->id_usuari_assignat }}</td>
-                        <td><a class="btn btn-success" href="{{ route('incidencies.show', $incidencia->id) }}">Mostrar</a></td>
+                        <td colspan="3"><a class="btn btn-success" href="{{ route('incidencies.show', $incidencia->id) }}">Mostrar</a></td>
                         <td><a class="btn btn-primary" href="{{ route('incidencies.edit', $incidencia->id) }}">Assignar</a></td>
                         <td>
                             <form action="{{ route('incidencies.destroy', $incidencia->id)}}" method="post" 

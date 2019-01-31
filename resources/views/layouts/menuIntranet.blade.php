@@ -4,196 +4,100 @@
       <div class="sidebar-sticky">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link" href="{{URL::route('gestio')}}">
+            <a class="nav-link {{ request()->routeIs('gestio') ? 'active' : '' }}" href="{{URL::route('gestio')}}">
               <span data-feather="home"></span>
               Inici
             </a>
           </li>
 
+
           <li class="nav-item">
-            <a class="nav-link " data-toggle="collapse" aria-expanded="false" href="#submenu0">
+            <a class="nav-link {{ request()->routeIs('empleats*') ? 'active' : '' }}" data-toggle="collapse" aria-expanded="{{ request()->routeIs('empleats*') ? 'true' : 'false' }}" href="#submenu0">
               <span data-feather="users"></span>
               Gestionar Empleats
               <span data-feather="chevron-right"></span>
             </a>
           </li>
-          <ul class="nav flex-column collapse" id="submenu0" data-parent="#sidebar">
+          <ul class="nav flex-column collapse {{ request()->routeIs('empleats*') ? 'show' : '' }}" id="submenu0" data-parent="#sidebar">
             <li class="nav-item">
-              <a class="nav-link nav-interior " href="{{URL::route('inserirEmpleats')}}"><span data-feather="user-plus"></span>Crear Empleat</a>
+              <a class="nav-link nav-interior {{ request()->routeIs('empleats.create') ? 'active' : '' }}" href="{{URL::route('empleats.create')}}"><span data-feather="user-plus"></span>Crear Empleat</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-interior" href="{{URL::route('gestioEmpleats')}}"><span data-feather="file-text"></span>Gestionar Empleats</a>
+              <a class="nav-link nav-interior {{ request()->routeIs('empleats.index') ? 'active' : '' }}" href="{{URL::route('empleats.index')}}"><span data-feather="file-text"></span>Gestionar Empleats</a>
             </li>
             </li>
           </ul>
 
+
           <li class="nav-item">
-            <a class="nav-link " data-toggle="collapse" aria-expanded="false" href="#submenu1">
+            <a class="nav-link {{ request()->routeIs('inserirClients') ? 'active' : '' }}" data-toggle="collapse" aria-expanded="{{ request()->routeIs('inserirClients') ? 'true' : 'false' }}" href="#submenu1">
               <span data-feather="users"></span>
               Gestionar Clients
               <span data-feather="chevron-right"></span>
             </a>
           </li>
-          <ul class="nav flex-column collapse" id="submenu1" data-parent="#sidebar">
+          <ul class="nav flex-column collapse {{ request()->routeIs('inserirClients') ? 'show' : '' }}" id="submenu1" data-parent="#sidebar">
             <li class="nav-item">
-              <a class="nav-link nav-interior" href="{{URL::route('inserirClients')}}"><span data-feather="user-plus"></span>Crear Client</a>
+              <a class="nav-link nav-interior {{ request()->routeIs('inserirClients') ? 'active' : '' }}" href="{{URL::route('inserirClients')}}"><span data-feather="user-plus"></span>Crear Client</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-interior" href="{{URL::route('gestioClients')}}"><span data-feather="file-text"></span>Gestionar Clients</a>
+              <a class="nav-link nav-interior {{ request()->routeIs('gestioClients') ? 'active' : '' }}" href="{{URL::route('gestioClients')}}"><span data-feather="file-text"></span>Gestionar Clients</a>
             </li>
           </ul>
 
+
           <li class="nav-item">
-            <a class="nav-link active" data-toggle="collapse" aria-expanded="true" href="#submenu3">
+            <a class="nav-link " data-toggle="collapse" aria-expanded="false" href="#submenu3">
               <span data-feather="trending-down"></span>
               Gestionar Atraccions
               <span data-feather="chevron-right"></span>
             </a>
           </li>
-          <ul class="nav flex-column collapse show" id="submenu3" data-parent="#sidebar">
+          <ul class="nav flex-column collapse " id="submenu3" data-parent="#sidebar">
             <li class="nav-item">
-              <a class="nav-link nav-interior" href="{{URL::route('inserirAtraccions')}}"><span data-feather="plus-square"></span>Crear Atracció</a>
+              <a class="nav-link nav-interior " href="#"><span data-feather="plus-square"></span>Crear Atracció</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-interior active" href="{{URL::route('gestioAtraccions')}}"><span data-feather="file-text"></span>Gestionar Atraccions</a>
+              <a class="nav-link nav-interior " href="#"><span data-feather="file-text"></span>Gestionar Atraccions</a>
             </li>
           </ul>
+          
 
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" aria-expanded="false" href="#submenu4">
-              <span data-feather="briefcase"></span>
-              Gestionar Hotel
-              <span data-feather="chevron-right"></span>
-            </a>
-          </li>
-          <ul class="nav flex-column collapse" id="submenu4" data-parent="#sidebar">
-            <li class="nav-item">
-              <a class="nav-link nav-interior" data-toggle="collapse" aria-expanded="false" href="#sub-submenu1">
-                <span data-feather="star"></span>
-                Gestionar Habitacions
-                <span data-feather="chevron-right"></span>
-              </a>
-            </li>
-
-              <ul class="nav flex-column collapse" id="sub-submenu1" data-parent="#submenu4">
-                <li class="nav-item">
-                  <a class="nav-link nav-interior2" href="#"><span data-feather="star"></span>Inserir Habitacions</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link nav-interior2"  href="#"><span data-feather="star"></span>Gestionar Habitacions</a>
-                </li>
-              </ul>
-
-            <li class="nav-item">
-              <a class="nav-link nav-interior" data-toggle="collapse" aria-expanded="false" href="#sub-submenu3">
-                <span data-feather="book-open"></span>
-                Gestionar Reserves Habitacions
-                <span data-feather="chevron-right"></span>
-              </a>
-            </li>
-
-            <ul class="nav flex-column collapse" id="sub-submenu3" data-parent="#submenu4">
-                <li class="nav-item">
-                  <a class="nav-link nav-interior2"  href="#"><span data-feather="star"></span>Inserir Reserva Hab</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link nav-interior2" href="#"><span data-feather="star"></span>Gestionar Reserva Hab</a>
-                </li>
-            </ul>
-
-            <li class="nav-item">
-              <a class="nav-link nav-interior" data-toggle="collapse" aria-expanded="false" href="#sub-submenu2">
-                <span data-feather="coffee"></span>
-                Gestionar Restaurant
-                <span data-feather="chevron-right"></span>
-              </a>
-            </li>
-
-            <ul class="nav flex-column collapse" id="sub-submenu2" data-parent="#submenu4">
-              <li class="nav-item">
-                <a class="nav-link nav-interior2" href="#"><span data-feather="star"></span>Inserir Taula</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-interior2" href="#"><span data-feather="star"></span>Gestionar Taula</a>
-              </li>
-            </ul>
-
-            <li class="nav-item">
-              <a class="nav-link nav-interior" data-toggle="collapse" aria-expanded="false" href="#sub-submenu4">
-                <span data-feather="book-open"></span>
-                Gestionar Reserves Restaurant
-                <span data-feather="chevron-right"></span>
-              </a>
-            </li>
-
-            <ul class="nav flex-column collapse" id="sub-submenu4" data-parent="#submenu4">
-                <li class="nav-item">
-                  <a class="nav-link nav-interior2" href="#"><span data-feather="star"></span>Inserir Reserva Taula</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link nav-interior2" href="#"><span data-feather="star"></span>Gestionar Reserva Taula</a>
-                </li>
-            </ul>
-            </ul>
-
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" aria-expanded="false" href="#submenu5">
+            <a class="nav-link {{ request()->routeIs('incidencies*') ? 'active' : '' }}" data-toggle="collapse" aria-expanded="{{ request()->routeIs('incidencies*') ? 'true' : 'false' }}" href="#submenu5">
               <span data-feather="alert-triangle"></span>
               Gestionar Incidències
               <span data-feather="chevron-right"></span>
             </a>
           </li>
 
-          <ul class="nav flex-column collapse" id="submenu5" data-parent="#sidebar">
+          <ul class="nav flex-column collapse {{ request()->routeIs('incidencies*') ? 'show' : '' }}" id="submenu5" data-parent="#sidebar">
             <li class="nav-item">
-              <a class="nav-link nav-interior" href="{{URL::route('incidencies.create')}}"><span data-feather="plus-square"></span>Crear Inicidència</a>
+              <a class="nav-link nav-interior {{ request()->routeIs('incidencies.create') ? 'active' : '' }}" href="{{URL::route('incidencies.create')}}"><span data-feather="plus-square"></span>Crear Inicidència</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-interior" href="{{URL::route('incidencies.index')}}"><span data-feather="file-text"></span>Gestionar Inicidències</a>
+              <a class="nav-link nav-interior {{ request()->routeIs('incidencies.index') ? 'active' : '' }}" href="{{URL::route('incidencies.index')}}"><span data-feather="file-text"></span>Gestionar Inicidències</a>
             </li>
           </ul>
 
+
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" aria-expanded="false" href="#submenu6">
+            <a class="nav-link {{ request()->routeIs('serveis*') ? 'active' : '' }}" data-toggle="collapse" aria-expanded="{{ request()->routeIs('serveis*') ? 'true' : 'false' }}" href="#submenu6">
               <span data-feather="truck"></span>
               Gestionar Serveis
               <span data-feather="chevron-right"></span>
             </a>
           </li>
 
-          <ul class="nav flex-column collapse" id="submenu6" data-parent="#sidebar">
+          <ul class="nav flex-column collapse {{ request()->routeIs('serveis*') ? 'show' : '' }}" id="submenu5" data-parent="#sidebar">
             <li class="nav-item">
-              <a class="nav-link nav-interior" data-toggle="collapse" aria-expanded="false" href="#sub-submenu4">
-                <span data-feather="trash-2"></span>
-                Gestionar Neteja
-                <span data-feather="chevron-right"></span>
-              </a>
+              <a class="nav-link nav-interior {{ request()->routeIs('serveis.create') ? 'active' : '' }}" href="{{URL::route('serveis.create')}}"><span data-feather="plus-square"></span>Crear Servei</a>
             </li>
-            <ul class="nav flex-column collapse" id="sub-submenu4" data-parent="#submenu6">
-              <li class="nav-item">
-                <a class="nav-link nav-interior2" href="#"><span data-feather="plus-square"></span>Crear Tasca Neteja</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-interior2" href="#"><span data-feather="file-text"></span>Gestionar Tasques Neteja</a>
-              </li>
-            </ul>
-
             <li class="nav-item">
-              <a class="nav-link nav-interior" data-toggle="collapse" aria-expanded="false" href="#sub-submenu5">
-                <span data-feather="settings"></span>
-                Gestionar Manteniment
-                <span data-feather="chevron-right"></span>
-              </a>
+              <a class="nav-link nav-interior {{ request()->routeIs('serveis.index') ? 'active' : '' }}" href="{{URL::route('serveis.index')}}"><span data-feather="file-text"></span>Gestionar Serveis</a>
             </li>
-            <ul class="nav flex-column collapse" id="sub-submenu5" data-parent="#submenu6">
-              <li class="nav-item">
-                <a class="nav-link nav-interior2" href="#"><span data-feather="plus-square"></span>Crear Tasca Manteniment</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-interior2" href="#"><span data-feather="file-text"></span>Gestionar Tasques Manteniment</a>
-              </li>
-            </ul>
           </ul>
+
 
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" aria-expanded="false" href="#submenu9">

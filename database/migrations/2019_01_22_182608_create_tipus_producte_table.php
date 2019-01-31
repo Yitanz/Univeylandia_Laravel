@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProducteTable extends Migration
+class CreateTipusProducteTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateProducteTable extends Migration
      */
     public function up()
     {
-        Schema::create('productes', function (Blueprint $table) {
+        Schema::create('tipus_producte', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('atributs')->references('id')->on('atributs_producte');
-            $table->text('descripcio');
-            $table->boolean('estat');
+            $table->string('nom');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
@@ -30,6 +28,6 @@ class CreateProducteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('productes');
+        Schema::dropIfExists('tipus_productes');
     }
 }

@@ -91,6 +91,8 @@
 
   Route::resource('gestio/zones', 'ZonesController');
 
+  Route::resource('gestio/serveis', 'ServeisController');
+
   Route::get('promocions/promocio_x', ['as' => 'promocio_x', function(){
     $title = "Promoció X";
     return view ('vistesparc/promocio_x', compact('title'));

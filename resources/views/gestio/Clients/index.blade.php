@@ -44,6 +44,7 @@
             </tr>
           </thead>
           <tbody>
+          
           @foreach ($usuaris as $usuari)
           <tr>
               <td>{{$usuari->nom}}</td>

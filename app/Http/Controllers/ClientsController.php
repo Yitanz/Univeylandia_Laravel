@@ -68,7 +68,9 @@ class ClientsController extends Controller
      */
     public function show($id)
     {
-        //
+       $usuari=User::findOrFail($id);
+
+       return view ('gestio/Clients.show', compact('usuari'));
     }
 
     /**
@@ -79,7 +81,9 @@ class ClientsController extends Controller
      */
     public function edit($id)
     {
-        //
+       $usuari=User::findOrFail($id);
+       return view ('gestio/Clients.edit', compact('usuari'));
+
     }
 
     /**
@@ -91,9 +95,32 @@ class ClientsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+      
+      $usuaris=User::findOrFail($id);
+      $rol=1;
+      $actiu=0;
+      
+      $usuaris->nom=$request->nom;
+      $usuaris->cognom1=$request->cognom1;
+      $usuaris->cognom2=$request->cognom2;
+      $usuaris->tipus_document=$request->tipus_document;
+      $usuaris->numero_document=$request->numero_document;
+      $usuaris->data_naixement=$request->date;
+      $usuaris->sexe=$request->sexe;
+      $usuaris->telefon=$request->telefon;
+      $usuaris->email=$request->email;
+      $usuaris->adreca=$request->adreca;
+      $usuaris->ciutat=$request->ciutat;
+      $usuaris->provincia=$request->provincia;
+      $usuaris->password=$request->contrasenya;
+      $usuaris->codi_postal=$request->cp;
+      $usuaris->id_rol=$rol;
+      $usuaris->actiu=$actiu;
+      
+      $usuaris->update();
 
+      return redirect('gestio/Clients');
+    }
     /**
      * Remove the specified resource from storage.
      *

@@ -5,21 +5,23 @@
 @section("menuIntranet")
 @endsection
 @section("body")
+
+
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <style>
       .uper {
         margin-top: 40px;
       }
     </style>
-    @if(session()->get('success'))
-    <div class="uper">
+    <div class="uper d-none">
+      @if(session()->get('success'))
         <div class="alert alert-success">
           {{ session()->get('success') }}
         </div>
+      @endif
     </div>
-    @endif
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Administrar Incidències</h1>
+            <h1 class="h2">Administrar Zones</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
                 <button class="btn btn-sm btn-outline-secondary">
@@ -33,11 +35,11 @@
             <form method="post" style="margin-top=50px;">
               <div class="form-row">
                 <div class="col-10">
-                  <input class="form-control" type="text" name="filtre" placeholder="Filtrar...">
+                  <input class="form-control" type="text" name="busqueda_habitacio" placeholder="Filtrar...">
                 </div>
                 <div class="form-group row">
                   <div class="offset-sm-2 col-sm-10">
-                    <input type="submit" class="btn btn-primary" name="buscar" value="Filtrar">
+                    <input type="submit" class="btn btn-primary" name="buscar_habitacio" value="Filtrar">
                   </div>
                 </div>
               </div>
@@ -48,30 +50,20 @@
                     <thead class="thead-light">
                         <tr>
                         <th>ID</th>
-                        <th>Títol</th>
-                        <th>Descripció</th>
-                        <th>Prioritat</th>
-                        <th>Estat</th>
-                        <th>Reportador</th>
-                        <th>Assignat a</th>
+                        <th>Nom</th>
                         <th colspan="2">Acció</th>
                         </tr>
                     </thead>
                 <tbody>
-                    @foreach($incidencies as $incidencia)
+
+                    @foreach($zones as $zona)
                     <tr>
-                        <td>{{ $incidencia->id }}</td>
-                        <td>{{ $incidencia->titol }}</td>
-                        <td>{{ $incidencia->descripcio }}</td>
-                        <td>{{ $incidencia->id_prioritat }}</td>
-                        <td>{{ $incidencia->id_estat }}</td>
-                        <td>{{ $incidencia->id_usuari_reportador }}</td>
-                        <td>{{ $incidencia->id_usuari_assignat }}</td>
-                        <td><a class="btn btn-success" href="{{ route('incidencies.show', $incidencia->id) }}">Mostrar</a></td>
-                        <td><a class="btn btn-primary" href="{{ route('incidencies.edit', $incidencia->id) }}">Assignar</a></td>
+                        <td>{{ $zona->id }}</td>
+                        <td>{{ $zona->nom }}</td>
+                        <td><a class="btn btn-primary" href="{{ route('zones.edit', $zona->id) }}">Modificar</a></td>
                         <td>
-                            <form action="{{ route('incidencies.destroy', $incidencia->id)}}" method="post" 
-                            onsubmit="return confirm('Estàs segur de voler eliminar la incidència?');">
+                            <form action="{{ route('zones.destroy', $zona->id)}}" method="post"
+                              onsubmit="return confirm('Estàs segur de voler eliminar la zona?');">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit">Eliminar</button>
@@ -79,7 +71,7 @@
                         </td>
                     </tr>
                     @endforeach
-                    </tbody>
+                  </tbody>
                 </table>
             </div>
         </main>

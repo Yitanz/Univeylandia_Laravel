@@ -42,9 +42,9 @@
             <div class="col-md-6 mb-3">
               <label for="assigned-employee">Assignada a:</label>
               @foreach ($treballadors as $treballador)
-              @if ($incidencia->id_usuari_assignat == $treballador->id)
-              <input list="employees" name="assigned-employee" class="form-control form-control-sm" value="{{ $treballador->nom }} {{ $treballador->cognom1 }} {{ $treballador->cognom2 }} {{ $treballador->numero_document }}" disabled>
-              @endif
+                @if ($incidencia->id_usuari_assignat == $treballador->id)
+                <input list="employees" name="assigned-employee" class="form-control form-control-sm" value="{{ $treballador->nom }} {{ $treballador->cognom1 }} {{ $treballador->cognom2 }} {{ $treballador->numero_document }}" disabled>
+                @endif
               @endforeach
               </datalist>
             </div>

@@ -12,8 +12,7 @@ use Auth;
 class IncidenciesController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth');
-        $this->middleware('is_admin');
+        $this->middleware(['auth', 'is_admin']);
     }
 
     /**
@@ -35,9 +34,9 @@ class IncidenciesController extends Controller
      */
     public function create()
     {
-        $tipus_prioritat = DB::table('tipus_prioritat')->get();
+        $prioritats = PrioritatIncidencia::all();
 
-        return view('gestio/incidencies/create', compact('tipus_prioritat'));
+        return view('gestio/incidencies/create', compact('prioritats'));
     }
 
     /**
@@ -146,5 +145,22 @@ class IncidenciesController extends Controller
         $incidencia->delete();
 
         return redirect('gestio/incidencies')->with('success', 'Incidència eliminada correctament');
+    }
+
+    /**
+     * Change the status of the specified resource to 'Done'.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function conclude($id)
+    {
+        $incidencia = Incidencia::findOrFail($id);
+
+        $incidencia->id_estat = 3;
+
+        $incidencia->save();
+
+        return redirect('gestio/incidencies')->with('success', 'Incidència finalitzada correctament');
     }
 }

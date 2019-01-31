@@ -35,7 +35,7 @@
             <div class="col-md-6 mb-3">
               <label for="priority">Prioritat</label>
               <select class="form-control form-control-sm" name="priority">
-              @foreach ($tipus_prioritat as $prioritat)
+              @foreach ($prioritats as $prioritat)
                 <option value=" {{ $prioritat->id }}">{{ $prioritat->nom_prioritat }}</option>
               @endforeach
               </select>

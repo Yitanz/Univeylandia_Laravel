@@ -90,5 +90,15 @@
   Route::resource('gestio/empleats', 'EmpleatsController');
 
   Route::resource('gestio/zones', 'ZonesController');
-  
+
+  Route::get('promocions/promocio_x', ['as' => 'promocio_x', function(){
+    $title = "Promoció X";
+    return view ('vistesparc/promocio_x', compact('title'));
+  }]);
+
+  Route::get('cistella',['as' => 'promocio_x', function(){
+    $title = "Cistella";
+    return view ('vistesparc/cistella', compact('title'));
+  }])->middleware('auth');
+
   Route::resource('gestio/serveis', 'ServeisController');

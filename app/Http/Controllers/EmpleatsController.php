@@ -15,7 +15,9 @@ class EmpleatsController extends Controller
      */
     public function index()
     {
-        return view('gestio/empleats/index');
+    $dades_empleats = dades_empleat::all();
+
+    return view('gestio/empleats/index', compact('dades_empleats'));
     }
 
     /**
@@ -61,7 +63,9 @@ class EmpleatsController extends Controller
      */
     public function show($id)
     {
-        //
+        $dades_empleats = dades_empleat::findOrFail($id);
+
+        return view('gestio/empleats/show', compact("dades_empleats"));
          
     }
 
@@ -73,7 +77,9 @@ class EmpleatsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dades_empleats = dades_empleat::findOrFail($id);
+
+        return view('gestio/empleats/edit', compact("dades_empleats"));
     }
 
     /**
@@ -85,8 +91,11 @@ class EmpleatsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        return view('gestio/empleats/update');
+         $dades_empleats = dades_empleat::findOrFail($id);
+
+         $dades_empleats->update($request->all());
+        return redirect('gestio/empleats/');
+        
     }
 
     /**
@@ -97,7 +106,8 @@ class EmpleatsController extends Controller
      */
     public function destroy($id)
     {
-        //
-        return view('gestio/empleats/delete');
+        $dades_empleats = dades_empleat::findOrFail($id);
+        $dades_empleats->delete();
+        return redirect('gestio/empleats/');
     }
 }

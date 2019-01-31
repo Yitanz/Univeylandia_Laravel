@@ -55,6 +55,7 @@
                         <th>Carrec</th>
                         <th>Data Inici</th>
                         <th>Data Fi</th>
+                        <th>Horari</th>
                         <th colspan="2">Acció</th>
                         </tr>
                     </thead>
@@ -70,9 +71,10 @@
                         <td>{{ $dades_empleat->carrec }}</td>
                         <td>{{ $dades_empleat->data_inici_contracte }}</td>
                         <td>{{ $dades_empleat->data_fi_contracte }}</td>
-                        <td><a class="btn btn-primary" href="{{ route('dades_empleats.edit', $dades_empleat->id) }}">Modificar</a></td>
+                        <td>{{ $dades_empleat->id_horari }}</td>
+                        <td><a class="btn btn-primary" href="{{ route('empleats.edit', $dades_empleat->id) }}">Modificar</a></td>
                         <td>
-                            <form action="{{ route('dades_empleats.destroy', $dades_empleat->id)}}" method="post">
+                            <form action="{{ route('empleats.destroy', $dades_empleat->id)}}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit">Eliminar</button>

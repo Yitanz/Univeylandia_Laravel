@@ -32,53 +32,8 @@
  Route::any('/restaurant', array('as' => 'restaurant','uses' => 'paginesParc@restaurant'));
  Route::any('/parc', array('as' => 'parc','uses' => 'paginesParc@parc'));
  Route::any('/parcHotel', array('as' => 'parcHotel','uses' => 'paginesParc@parcHotel'));
- Route::any('/login', array('as' => 'login','uses' => 'paginesParc@login'));
+ Route::any('login', array('as' => 'login','uses' => 'paginesParc@login'));
  Route::any('/gestio', array('as' => 'gestio','uses' => 'intranetController@inici'));
-
- /**
-  * routes intranetparc
-  */
-
-  Route::get('/gestio/clients',"intranetController@gestioClients");
-  Route::get('/gestio/clients/inserir',"intranetController@inserirClients");
-
-  Route::get('/gestio/atraccions',"intranetController@gestioAtraccions");
-  Route::get('/gestio/atraccions/inserir',"intranetController@inserirAtraccions");
-
-  Route::get('/gestio/empleats',"intranetController@gestioEmpleats");
-  Route::get('/gestio/empleats/inserir',"intranetController@inserirEmpleats");
-
-  Route::get('/gestio/incidencies',"intranetController@gestioIncidencia");
-  Route::get('/gestio/incidencies/inserir',"intranetController@inserirIncidencia");
-
-  Route::get('/gestioNoticies',"intranetController@gestioNoticies");
-  Route::get('/inserirNoticia',"intranetController@inserirNoticia");
-
-  Route::get('/gestioServeis',"intranetController@gestioServeis");
-  Route::get('/inserirServei',"intranetController@inserirServei");
-
-
-  /*
-   * Links intranetparc
-   */
-  Route::any('/gestioClients', array('as' => 'gestioClients','uses' => 'intranetController@gestioClients'));
-  Route::any('/inserirClients', array('as' => 'inserirClients','uses' => 'intranetController@inserirClients'));
-
-  Route::any('/gestioAtraccions', array('as' => 'gestioAtraccions','uses' => 'intranetController@gestioAtraccions'));
-  Route::any('/inserirAtraccions', array('as' => 'inserirAtraccions','uses' => 'intranetController@inserirAtraccions'));
-
-  Route::any('/gestioEmpleats', array('as' => 'gestioEmpleats','uses' => 'intranetController@gestioEmpleats'));
-  Route::any('/inserirEmpleats', array('as' => 'inserirEmpleats','uses' => 'intranetController@inserirEmpleats'));
-
-  Route::any('/gestioIncidencia', array('as' => 'gestioIncidencia','uses' => 'intranetController@gestioIncidencia'));
-  Route::any('/inserirIncidencia', array('as' => 'inserirIncidencia','uses' => 'intranetController@inserirIncidencia'));
-
-  Route::any('/gestioNoticies', array('as' => 'gestioNoticies','uses' => 'intranetController@gestioNoticies'));
-  Route::any('/inserirNoticia', array('as' => 'inserirNoticia','uses' => 'intranetController@inserirNoticia'));
-
-  Route::any('/gestioServeis', array('as' => 'gestioServeis','uses' => 'intranetController@gestioServeis'));
-  Route::any('/inserirServei', array('as' => 'inserirServei','uses' => 'intranetController@inserirServei'));
-
 
 
   Auth::routes(['verify' => true]);
@@ -103,4 +58,3 @@
     return view ('vistesparc/cistella', compact('title'));
   }])->middleware('auth');
 
-  Route::resource('gestio/serveis', 'ServeisController');

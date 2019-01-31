@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <title>Parc Atraccions Univeylandia</title>
   <link rel="icon" href="/img/icon.png" type="image/gif">

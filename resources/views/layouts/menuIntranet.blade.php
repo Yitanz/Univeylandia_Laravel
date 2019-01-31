@@ -30,18 +30,18 @@
 
 
           <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('inserirClients') ? 'active' : '' }}" data-toggle="collapse" aria-expanded="{{ request()->routeIs('inserirClients') ? 'true' : 'false' }}" href="#submenu1">
+            <a class="nav-link " data-toggle="collapse" aria-expanded="" href="#submenu1">
               <span data-feather="users"></span>
               Gestionar Clients
               <span data-feather="chevron-right"></span>
             </a>
           </li>
-          <ul class="nav flex-column collapse {{ request()->routeIs('inserirClients') ? 'show' : '' }}" id="submenu1" data-parent="#sidebar">
+          <ul class="nav flex-column collapse " id="submenu1" data-parent="#sidebar">
             <li class="nav-item">
-              <a class="nav-link nav-interior {{ request()->routeIs('inserirClients') ? 'active' : '' }}" href="{{URL::route('inserirClients')}}"><span data-feather="user-plus"></span>Crear Client</a>
+              <a class="nav-link nav-interior " href="#"><span data-feather="user-plus"></span>Crear Client</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-interior {{ request()->routeIs('gestioClients') ? 'active' : '' }}" href="{{URL::route('gestioClients')}}"><span data-feather="file-text"></span>Gestionar Clients</a>
+              <a class="nav-link nav-interior " href="#"><span data-feather="file-text"></span>Gestionar Clients</a>
             </li>
           </ul>
 
@@ -108,10 +108,10 @@
           </li>
           <ul class="nav flex-column collapse" id="submenu9" data-parent="#sidebar">
             <li class="nav-item">
-              <a class="nav-link nav-interior" href="{{URL::route('inserirNoticia')}}"><span data-feather="user-plus"></span>Crear Noticia</a>
+              <a class="nav-link nav-interior" href="#"><span data-feather="user-plus"></span>Crear Noticia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-interior" href="{{URL::route('gestioNoticies')}}"><span data-feather="file-text"></span>Gestionar Noticia</a>
+              <a class="nav-link nav-interior" href="#"><span data-feather="file-text"></span>Gestionar Noticia</a>
             </li>
           </ul>
         </ul>

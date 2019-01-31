@@ -25,7 +25,7 @@
         <label>Recordar usuari</label>
         <label><a href="#">Has oblidat la contrasenya?</a></label>
           <br>
-        <label><a href="registre.php">No tens compte? REGISTRAT</a></label>
+        <label><a href="registre.php">No tens compte? REGISTRA'T</a></label>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar sessio</button>
       <button class="btn btn-md btn-secondary btn-block" type="reset" onclick="history.back()">Tornar enrere</button>

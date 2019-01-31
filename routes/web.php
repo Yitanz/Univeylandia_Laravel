@@ -56,26 +56,26 @@
 
   Route::get('/gestioServeis',"intranetController@gestioServeis");
   Route::get('/inserirServei',"intranetController@inserirServei");
-  
+
 
   /*
    * Links intranetparc
    */
   Route::any('/gestioClients', array('as' => 'gestioClients','uses' => 'intranetController@gestioClients'));
   Route::any('/inserirClients', array('as' => 'inserirClients','uses' => 'intranetController@inserirClients'));
-  
+
   Route::any('/gestioAtraccions', array('as' => 'gestioAtraccions','uses' => 'intranetController@gestioAtraccions'));
   Route::any('/inserirAtraccions', array('as' => 'inserirAtraccions','uses' => 'intranetController@inserirAtraccions'));
-  
+
   Route::any('/gestioEmpleats', array('as' => 'gestioEmpleats','uses' => 'intranetController@gestioEmpleats'));
   Route::any('/inserirEmpleats', array('as' => 'inserirEmpleats','uses' => 'intranetController@inserirEmpleats'));
-  
+
   Route::any('/gestioIncidencia', array('as' => 'gestioIncidencia','uses' => 'intranetController@gestioIncidencia'));
   Route::any('/inserirIncidencia', array('as' => 'inserirIncidencia','uses' => 'intranetController@inserirIncidencia'));
-  
+
   Route::any('/gestioNoticies', array('as' => 'gestioNoticies','uses' => 'intranetController@gestioNoticies'));
   Route::any('/inserirNoticia', array('as' => 'inserirNoticia','uses' => 'intranetController@inserirNoticia'));
-  
+
   Route::any('/gestioServeis', array('as' => 'gestioServeis','uses' => 'intranetController@gestioServeis'));
   Route::any('/inserirServei', array('as' => 'inserirServei','uses' => 'intranetController@inserirServei'));
 
@@ -86,7 +86,17 @@
   Route::get('/home', 'HomeController@index')->name('home');
 
   Route::resource('gestio/incidencies', 'IncidenciesController');
-  
+
   Route::resource('gestio/empleats', 'EmpleatsController');
 
   Route::resource('gestio/zones', 'ZonesController');
+
+  Route::get('promocions/promocio_x', ['as' => 'promocio_x', function(){
+    $title = "Promoció X";
+    return view ('vistesparc/promocio_x', compact('title'));
+  }]);
+
+  Route::get('cistella',['as' => 'promocio_x', function(){
+    $title = "Cistella";
+    return view ('vistesparc/cistella', compact('title'));
+  }])->middleware('auth');

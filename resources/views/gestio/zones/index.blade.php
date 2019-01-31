@@ -62,7 +62,8 @@
                         <td>{{ $zona->nom }}</td>
                         <td><a class="btn btn-primary" href="{{ route('zones.edit', $zona->id) }}">Modificar</a></td>
                         <td>
-                            <form action="{{ route('zones.destroy', $zona->id)}}" method="post">
+                            <form action="{{ route('zones.destroy', $zona->id)}}" method="post"
+                              onsubmit="return confirm('Estàs segur de voler eliminar la zona?');">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit">Eliminar</button>

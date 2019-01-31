@@ -102,3 +102,5 @@
     $title = "Cistella";
     return view ('vistesparc/cistella', compact('title'));
   }])->middleware('auth');
+
+  Route::resource('gestio/serveis', 'ServeisController');

@@ -13,4 +13,5 @@ class ServeisZones extends Model
       'id_servei',
       'id_empleat'
   ];
+  
 }

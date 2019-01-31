@@ -11,13 +11,13 @@
         margin-top: 40px;
       }
     </style>
+    @if(session()->get('success'))
     <div class="uper">
-      @if(session()->get('success'))
         <div class="alert alert-success">
           {{ session()->get('success') }}
         </div>
-      @endif
     </div>
+    @endif
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">Administrar Serveis</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
@@ -55,15 +55,15 @@
                         </tr>
                     </thead>
                 <tbody>
-                    @foreach($serveis as $servei)
+                    @foreach($assignacions as $servei_zona)
                     <tr>
-                        <td>{{ $servei->id }}</td>
-                        <td>{{ $servei->zona }}</td>
-                        <td>{{ $servei->servei }}</td>
-                        <td>{{ $servei->empleat }}</td>
-                        <td><a class="btn btn-primary" href="{{ route('serveis.edit', $servei->id) }}">Assignar</a></td>
+                        <td>{{ $servei_zona->id }}</td>
+                        <td>{{ $servei_zona->nom_zona }}</td>
+                        <td>{{ $servei_zona->nom_servei }}</td>
+                        <td>{{ $servei_zona->nom_empleat }}</td>
+                        <td><a class="btn btn-primary" href="{{ route('serveis.edit', $servei_zona->id) }}">Modificar</a></td>
                         <td>
-                            <form action="{{ route('serveis.destroy', $servei->id)}}" method="post">
+                            <form action="{{ route('serveis.destroy', $servei_zona->id)}}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit">Eliminar</button>

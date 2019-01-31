@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use \App\Servei;
+use \App\User;
+use \App\Zona;
+use \App\ServeisZones;
 
 class ServeisController extends Controller
 {
@@ -15,9 +19,20 @@ class ServeisController extends Controller
      */
     public function index()
     {
-      $serveis = Servei::all();
+      //$serveis_zones = ServeisZones::all();
+      $assignacions = DB::table('zones')
+      ->join ('serveis_zones','serveis_zones.id_zona', '=', 'zones.id')
+      ->join('users', 'serveis_zones.id_empleat', '=', 'users.id')
+      ->join('serveis', 'serveis_zones.id_servei', '=', 'serveis.id')
+      ->get ([
+        'serveis_zones.id as id',
+        'zones.nom as nom_zona',
+        'serveis.nom as nom_servei',
+        'users.nom as nom_empleat'
 
-      return view('gestio/serveis/index', compact('serveis'));
+      ]);
+
+      return view('gestio/serveis/index', compact('assignacions'));
     }
 
     /**
@@ -27,7 +42,13 @@ class ServeisController extends Controller
      */
     public function create()
     {
-        return view('gestio/serveis/create');
+        $treballadors = User::where('id_rol',3)
+        ->whereNotNull('email_verified_at')
+        ->get();
+
+        $zones = Zona::all();
+        $serveis = Servei::all();
+        return view('gestio/serveis/create', compact('serveis','zones','treballadors'));
     }
 
     /**
@@ -38,7 +59,22 @@ class ServeisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+      $request->validate([
+          'seleccio_zona' => 'required',
+          'nom_servei' => 'required',
+          'seleccio_empleat' => 'required'
+      ]);
+
+      $servei_zona = new ServeisZones([
+          'id_zona' => $request->get('seleccio_zona'),
+          'id_servei' => $request->get('nom_servei'),
+          'id_empleat' => $request->get('seleccio_empleat')
+      ]);
+
+      $servei_zona->save();
+
+      return redirect('/gestio/serveis')->with('success', 'Assignació creada correctament');
     }
 
     /**

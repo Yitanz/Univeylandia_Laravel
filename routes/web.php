@@ -56,7 +56,7 @@
 
   Route::get('/gestioServeis',"intranetController@gestioServeis");
   Route::get('/inserirServei',"intranetController@inserirServei");
-  
+
 
   /*
    * Links intranetparc
@@ -69,10 +69,10 @@
 
   Route::any('/gestioEmpleats', array('as' => 'gestioEmpleats','uses' => 'intranetController@gestioEmpleats'));
   Route::any('/inserirEmpleats', array('as' => 'inserirEmpleats','uses' => 'intranetController@inserirEmpleats'));
-  
+
   Route::any('/gestioIncidencia', array('as' => 'gestioIncidencia','uses' => 'intranetController@gestioIncidencia'));
   Route::any('/inserirIncidencia', array('as' => 'inserirIncidencia','uses' => 'intranetController@inserirIncidencia'));
-  
+
   Route::any('/gestioNoticies', array('as' => 'gestioNoticies','uses' => 'intranetController@gestioNoticies'));
   Route::any('/inserirNoticia', array('as' => 'inserirNoticia','uses' => 'intranetController@inserirNoticia'));
 
@@ -86,13 +86,9 @@
   Route::get('/home', 'HomeController@index')->name('home');
 
   Route::resource('gestio/incidencies', 'IncidenciesController');
-  
+
   Route::resource('gestio/empleats', 'EmpleatsController');
 
   Route::resource('gestio/zones', 'ZonesController');
-
-
-
-
-
+  
   Route::resource('gestio/serveis', 'ServeisController');

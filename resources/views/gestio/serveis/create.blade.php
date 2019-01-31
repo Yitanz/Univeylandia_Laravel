@@ -27,20 +27,22 @@
                 </tr>
               </thead>
           <tbody>
+            @foreach($zones as $zona)
             <tr>
-              <th scope="row">$row["id_atraccio"]</th>
-              <td>$row["nom_atraccio"]</td>
-              <td><input type="radio" class="form-check-input" name="seleccio_atraccio" value="'.$id_atraccio.'"></td>
+                <td>{{ $zona->id }}</td>
+                <td>{{ $zona->nom }}</td>
+              <td><input type="radio" class="form-check-input" name="seleccio_zona" value="{{ $zona->id }}"></td>
             </tr>
+            @endforeach
           </tbody>
 
 
         </table>
         <br/>
-        <input class="form-control" type="date" name="data_inici_assign">
+      <!--  <input class="form-control" type="date" name="data_inici_assign">
         <br/>
         <input class="form-control" type="date" name="data_fi_assign">
-        <br/>
+        <br/>-->
         <br/>
         <table class="table">
           <thead>
@@ -51,10 +53,13 @@
             </tr>
           </thead>
           <tbody>
-              <tr>
-              <th scope="row">'.$row["nom_servei"].'</th>
-              <td><input type="radio" class="form-check-input" name="nom_servei" value="'.$id_servei.'"></td>
+            @foreach($serveis as $servei)
+            <tr>
+                <td>{{ $servei->id }}</td>
+                <td>{{ $servei->nom }}</td>
+              <td><input type="radio" class="form-check-input" name="nom_servei" value="{{ $servei->id }}"></td>
               </tr>
+            @endforeach
           </tbody>
         </table>
         </div>
@@ -80,15 +85,17 @@
               </tr>
             </thead>
             <tbody>
+              @foreach($treballadors as $treballador)
               <tr>
-                <th scope="row">'.$row["id_usuari"].'</th>
-                <td>'.$row["nom"].'</td>
-                <td>'.$row["cognom1"].'</td>
-                <td>'.$row["cognom2"].'</td>
-                <td>'.$row["numero_document"].'</td>
-                <td><input type="checkbox" class="form-check-input" name="seleccio_empleat[]" value="'.$id_empleat.'">
+                  <td>{{ $treballador->id }}</td>
+                  <td>{{ $treballador->nom }}</td>
+                  <td>{{ $treballador->cognom1 }}</td>
+                  <td>{{ $treballador->cognom2 }}</td>
+                  <td>{{ $treballador->numero_document }}</td>
+                <td><input type="checkbox" class="form-check-input" name="seleccio_empleat" value="{{ $treballador->id }}">
                 </td>
               </tr>
+              @endforeach
             </tbody>
       </table>
 

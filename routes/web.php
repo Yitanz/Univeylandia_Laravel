@@ -77,7 +77,7 @@
   Route::resource('/gestio/atraccions', 'AtraccionsController');
 
   Route::resource('/gestio/Clients', 'ClientsController');
-  
+  Route::resource('/gestio/productes', 'gestioProductes');
   Route::any('/gestio/atraccions/index',function(){
       $q = Input::get ( 'q' );
 
@@ -87,4 +87,4 @@
       else return view ('gestio/atraccions/index')->withMessage('No Details found. Try to search again !');
   });
 //  Route::resource('/gestio/prorductes', 'ProductesController');
-    Route::resource('/gestio/productes', 'gestioProductes');
+    

@@ -47,18 +47,18 @@
 
 
           <li class="nav-item">
-            <a class="nav-link " data-toggle="collapse" aria-expanded="false" href="#submenu3">
+            <a class="nav-link {{ request()->routeIs('atraccions*') ? 'active' : '' }}" data-toggle="collapse" aria-expanded="{{ request()->routeIs('atraccions*') ? 'true' : 'false' }}" href="#submenu3">
               <span data-feather="trending-down"></span>
               Gestionar Atraccions
               <span data-feather="chevron-right"></span>
             </a>
           </li>
-          <ul class="nav flex-column collapse " id="submenu3" data-parent="#sidebar">
+          <ul class="nav flex-column collapse {{ request()->routeIs('atraccions*') ? 'show' : '' }}" id="submenu3" data-parent="#sidebar">
             <li class="nav-item">
-              <a class="nav-link nav-interior " href="#"><span data-feather="plus-square"></span>Crear Atracció</a>
+              <a class="nav-link nav-interior {{ request()->routeIs('atraccions.create') ? 'active' : '' }}" href="{{URL::route('atraccions.create')}}"><span data-feather="plus-square"></span>Crear Atracció</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-interior " href="#"><span data-feather="file-text"></span>Gestionar Atraccions</a>
+              <a class="nav-link nav-interior {{ request()->routeIs('atraccions.index') ? 'active' : '' }}" href="{{URL::route('atraccions.index')}}"><span data-feather="file-text"></span>Gestionar Atraccions</a>
             </li>
           </ul>
           

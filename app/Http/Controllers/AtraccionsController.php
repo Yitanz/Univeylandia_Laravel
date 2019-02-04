@@ -49,7 +49,9 @@ class AtraccionsController extends Controller
      */
     public function create()
     {
-      return view('gestio/atraccions/create');
+        $tipusAtraccions = TipusAtraccions::all();
+
+        return view('gestio/atraccions/create', compact('tipusAtraccions'));
     }
 
     /**
@@ -63,6 +65,8 @@ class AtraccionsController extends Controller
 
         request()->validate([
             'image' => 'required|mimes:jpeg,png,jpg,gif,svg',
+            'alturamin' => 'required|integer',
+            'alturamax' => 'required|integer'
         ]);
 
         $file = $request->file('image');
@@ -70,22 +74,20 @@ class AtraccionsController extends Controller
         $file_path = 'storage/atraccions';
         $file->move($file_path, $file_name);
         
-          $atraccio = new Atraccion([
-              'nom_atraccio' => $request->get('nom'),
-              'tipus_atraccio' => $request->get('tipusatraccio'),
-              'data_inauguracio' => $request->get('datainauguracio'),
-              'altura_min' => $request->get('alturamin'),
-              'altura_max' => $request->get('alturamax'),
-              'accessibilitat' => $request->get('accessible'),
-              'acces_express' => $request->get('accesexpress'),
-              'path' => "/".$file_path."/".$file_name
+        $atraccio = new Atraccion([
+            'nom_atraccio' => $request->get('nom'),
+            'tipus_atraccio' => $request->get('tipusatraccio'),
+            'data_inauguracio' => $request->get('datainauguracio'),
+            'altura_min' => $request->get('alturamin'),
+            'altura_max' => $request->get('alturamax'),
+            'accessibilitat' => $request->get('accessible'),
+            'acces_express' => $request->get('accesexpress'),
+            'descripcio' => $request->get('descripcio'),
+            'path' => "/".$file_path."/".$file_name
+        ]);
 
-          ]);
-
-  
-
-          $atraccio->save();
-          return redirect('/gestio/atraccions')->with('success', 'atraccio afegida');
+        $atraccio->save();
+        return redirect('/gestio/atraccions')->with('success', 'atraccio afegida');
     }
 
     /**

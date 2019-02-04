@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Atraccion extends Model
 {
 
-     protected $fillable = [
+  protected $fillable = [
     'nom_atraccio',
     'tipus_atraccio',
     'data_inauguracio',
@@ -15,6 +15,7 @@ class Atraccion extends Model
     'altura_max',
     'accessibilitat',
     'acces_express',
+    'descripcio',
     'path'
   ];
 }

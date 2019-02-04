@@ -17,7 +17,7 @@
                 <li>{{ $error }}</li>
                 @endforeach
             </ul>
-        </div><br/>
+        </div>
         @endif
         <form method="post" action="{{ route('incidencies.store') }}">
             @csrf
@@ -29,7 +29,7 @@
             <div class="col-md-6 mb-3">
               <div class="form-group">
                 <label for="description">Descripció</label>
-                <textarea class="form-control form-control-sm" name="description" rows="3" required></textarea>
+                <textarea class="form-control form-control-sm" style="resize:none" name="description" rows="5" required></textarea>
               </div>
             </div>
             <div class="col-md-6 mb-3">

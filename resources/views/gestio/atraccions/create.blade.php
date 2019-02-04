@@ -7,42 +7,58 @@
 @section("body")
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Registrar Atraccions</h1>
+          <h2>Registrar Atracció</h2>
         </div>
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
 
         <form class="needs-validation" method="post" action="{{ route('atraccions.store')}}" enctype="multipart/form-data">
           @csrf
           <div class="form-row">
             <div class="col-md-3 mb-3">
-              <label for="nom">Nom de l'Atraccio</label>
+              <label for="nom">Nom de l'atracció</label>
               <input type="text" class="form-control form-control-sm" placeholder="Nom" name="nom" required>
             </div>
             <div class="col-md-3 mb-3">
-              <label for="cognom1">Altura minima</label>
+              <div class="form-group">
+                <label for="descripcio">Descripció</label>
+                <textarea class="form-control form-control-sm" style="resize:none" name="descripcio" rows="1" required></textarea>
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="alturamin">Altura mínima</label>
               <input type="text" class="form-control form-control-sm" name="alturamin" required>
             </div>
             <div class="col-md-3 mb-3">
-              <label >Altura maxima</label>
-              <input type="text" class="form-control form-control-sm" name="alturamax">
+              <label for="alturamax">Altura màxima</label>
+              <input type="text" class="form-control form-control-sm" name="alturamax" required>
             </div>
             <div class="col-md-3 mb-3">
-              <label>Data d'Innauguracio</label>
-              <input type="date" class="form-control form-control-sm" name="datainauguracio">
+              <label for="datainauguracio">Data d'innauguració</label>
+              <input type="date" class="form-control form-control-sm" name="datainauguracio" required>
             </div>
           </div>
           <div class="form-row">
             <div class="col-md-3 mb-3">
-              <label for="nom">Tipus d'atraccio</label>
+              <label for="tipusatraccio">Tipus d'atracció</label>
               <div class="input-group">
                 <select class="form-control form-control-sm" name="tipusatraccio">
-                  <option value="1">Extrema</option>
-                  <option value="2">Mitjana</option>
-                  <option value="3">Familiar</option>
+                @foreach($tipusAtraccions as $tipus)
+                  <option value="{{ $tipus->id }}">{{ $tipus->tipus }}</option>
+                @endforeach
                 </select>
               </div>
             </div>
             <div class="col-md-3 mb-3">
-              <label for="cognom1">Accessibilitat</label>
+              <label for="accessible">Accessibilitat</label>
                 <div class="input-group">
                 <select class="form-control form-control-sm" name="accessible">
                   <option value="1">SI</option>
@@ -51,7 +67,7 @@
               </div>
             </div>
             <div class="col-md-3 mb-3">
-              <label for="cognom2">Acces Express</label>
+              <label for="accesexpress">Accés Express</label>
               <div class="input-group">
                 <select class="form-control form-control-sm" name="accesexpress">
                   <option value="1">SI</option>
@@ -64,20 +80,9 @@
         </div>  
           </div>
             <button class="btn btn-primary" type="submit">Crear</button>
-          <button class="btn btn-primary" type="reset">Cancel·lar</button>
+          <button class="btn btn-secondary" type="reset">Cancel·lar</button>
         </form>
         <br>
-        <form>
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-3 mb-3">
-                <label for="exampleFormControlFile1">Pujar arxiu .CSV amb dades de clients</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-              </div>
-            </div>
-          </div>
-
-        </form>
 
       </main>
     </div>

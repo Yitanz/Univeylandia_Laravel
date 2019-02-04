@@ -35,7 +35,7 @@
  Route::any('login', array('as' => 'login','uses' => 'paginesParc@login'));
  Route::any('/gestio', array('as' => 'gestio','uses' => 'intranetController@inici'));
 
-
+  /* RUTES GRUP 1 */
   Auth::routes(['verify' => true]);
 
   Route::get('/home', 'HomeController@index')->name('home');
@@ -58,3 +58,9 @@
     return view ('vistesparc/cistella', compact('title'));
   }])->middleware('auth');
 
+
+  /* RUTES GRUP 2 */
+  Route::resource('/gestio/atraccions', 'AtraccionsController');
+
+  Route::get('/gestio/atraccions/image', 'AtraccionsController@store')->name('image.upload');
+  Route::post('/gestio/atraccions/image', 'AtraccionsController@store')->name('image.upload.post');

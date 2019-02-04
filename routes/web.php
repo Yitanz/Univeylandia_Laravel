@@ -87,3 +87,4 @@
       else return view ('gestio/atraccions/index')->withMessage('No Details found. Try to search again !');
   });
 //  Route::resource('/gestio/prorductes', 'ProductesController');
+    Route::resource('/gestio/productes', 'gestioProductes');

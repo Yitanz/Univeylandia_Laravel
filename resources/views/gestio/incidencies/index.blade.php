@@ -63,10 +63,10 @@
                         <td>{{ $incidencia->id }}</td>
                         <td>{{ $incidencia->titol }}</td>
                         <td>{{ $incidencia->descripcio }}</td>
-                        <td>{{ $incidencia->id_prioritat }}</td>
-                        <td>{{ $incidencia->id_estat }}</td>
-                        <td>{{ $incidencia->id_usuari_reportador }}</td>
-                        <td>{{ $incidencia->id_usuari_assignat }}</td>
+                        <td>{{ $incidencia->nom_prioritat }}</td>
+                        <td>{{ $incidencia->nom_estat }}</td>
+                        <td>{{ $incidencia->nom_usuari_reportador }}</td>
+                        <td>{{ $incidencia->nom_usuari_assignat }}</td>
                         <td colspan="3"><a class="btn btn-success" href="{{ route('incidencies.show', $incidencia->id) }}">Mostrar</a></td>
                         <td><a class="btn btn-primary" href="{{ route('incidencies.edit', $incidencia->id) }}">Assignar</a></td>
                         <td>

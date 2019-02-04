@@ -23,7 +23,20 @@ class IncidenciesController extends Controller
      */
     public function index()
     {
-        $incidencies = Incidencia::all();
+        $incidencies = DB::table('incidencies')
+        ->join('users AS u1', 'incidencies.id_usuari_reportador', 'u1.id')
+        ->join('users AS u2', 'incidencies.id_usuari_assignat', 'u2.id')
+        ->join('tipus_prioritat', 'incidencies.id_prioritat', 'tipus_prioritat.id')
+        ->join('estat_incidencies', 'incidencies.id_estat', 'estat_incidencies.id')
+        ->get([
+            'incidencies.id as id',
+            'incidencies.titol as titol',
+            'incidencies.descripcio as descripcio',
+            'u1.nom as nom_usuari_reportador',
+            'u2.nom as nom_usuari_assignat',
+            'tipus_prioritat.nom_prioritat as nom_prioritat',
+            'estat_incidencies.nom_estat as nom_estat'
+        ]);
 
         return view('gestio/incidencies/index', compact('incidencies'));
     }
@@ -80,7 +93,7 @@ class IncidenciesController extends Controller
         $prioritats = PrioritatIncidencia::all();
 
         $treballadors = User::where('id_rol', 3)
-        ->where('actiu', 1)
+        ->whereNotNull('email_verified_at')
         ->get();
 
         return view('gestio/incidencies/show', compact(['incidencia', 'prioritats', 'treballadors']));
@@ -99,7 +112,7 @@ class IncidenciesController extends Controller
         $prioritats = PrioritatIncidencia::all();
 
         $treballadors = User::where('id_rol', 3)
-        ->where('actiu', 1)
+        ->whereNotNull('email_verified_at')
         ->get();
 
         return view('gestio/incidencies/edit', compact(['incidencia', 'prioritats', 'treballadors']));

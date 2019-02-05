@@ -16,7 +16,7 @@ class CreateProducteTable extends Migration
         Schema::create('productes', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('atributs')->references('id')->on('atributs_producte');
-            $table->text('descripcio');
+            $table->text('descripcio')->nullable();
             $table->boolean('estat');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));

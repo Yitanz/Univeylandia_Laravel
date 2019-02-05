@@ -16,6 +16,7 @@ class CreateTipusProducteTable extends Migration
         Schema::create('tipus_producte', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nom');
+            $table->string('preu_base');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });

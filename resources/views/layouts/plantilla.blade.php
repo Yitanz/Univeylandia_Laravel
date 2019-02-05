@@ -30,7 +30,7 @@
   <script>
   $(function() {
       $('.dropdown-toggle').click(function() {
-          $(this).next('.dropdown-menu').fadeToggle(500);
+          $(this).next('.dropdown-menu').fadeToggle(300);
       });
   });
 </script>

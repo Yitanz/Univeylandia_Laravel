@@ -135,7 +135,7 @@ class IncidenciesController extends Controller
 
         $prioritats = PrioritatIncidencia::all();
 
-        $treballador_assignat = User::findOrFail($incidencia->id_usuari_assignat);
+        $treballador_assignat = User::find($incidencia->id_usuari_assignat);
 
         $treballadors = User::where('id_rol', 3)
         ->whereNotNull('email_verified_at')

@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Parc      </a>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Parc</a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <li><a class="dropdown-item" href="{{URL::route('noticies')}}">Noticies</a></li>
           <li><a class="dropdown-item" href="{{URL::route('promocions')}}">Promocions</a></li>
@@ -16,18 +16,7 @@
         <a class="nav-link" href="{{URL::route('atraccions')}}">Atraccions</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Hotel      </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item" href="{{URL::route('habitacions')}}">Habitacions</a></li>
-          <li><a class="dropdown-item" href="{{URL::route('restaurant')}}">Restaurant</a></li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Entrades      </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item" href="{{URL::route('parc')}}">Parc</a></li>
-          <li><a class="dropdown-item" href="{{URL::route('parc')}}">Parc+Hotel</a></li>
-        </ul>
+        <a class="nav-link" href="{{URL::route('parc')}}">Compra entrades</a>
       </li>
 
     </ul>

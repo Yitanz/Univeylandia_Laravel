@@ -17,13 +17,36 @@ class IncidenciesController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Display a listing of the incidences to assign.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $incidencies = DB::table('incidencies')
+        $incidencies = DB::table('incidencies')->where('id_estat', 1)
+        ->join('users AS u1','incidencies.id_usuari_reportador','u1.id')
+        ->join('tipus_prioritat','incidencies.id_prioritat','tipus_prioritat.id')
+        ->join('estat_incidencies','estat_incidencies.id','incidencies.id_estat')
+        ->get([
+            'incidencies.id as id',
+            'incidencies.titol as titol',
+            'incidencies.descripcio as descripcio',
+            'u1.nom as nom_usuari_reportador',
+            'tipus_prioritat.nom_prioritat as nom_prioritat',
+            'estat_incidencies.nom_estat as nom_estat'
+        ]);
+
+        return view('gestio/incidencies/index', compact('incidencies'));
+    }
+
+    /**
+     * Display the assigned incidences
+     * 
+     * @return \Illuminate\Http\Response
+     */
+    public function assigned()
+    {
+        $incidencies = DB::table('incidencies')->where('id_estat', 2)
         ->join('users AS u1', 'incidencies.id_usuari_reportador', 'u1.id')
         ->join('users AS u2', 'incidencies.id_usuari_assignat', 'u2.id')
         ->join('tipus_prioritat', 'incidencies.id_prioritat', 'tipus_prioritat.id')
@@ -38,8 +61,9 @@ class IncidenciesController extends Controller
             'estat_incidencies.nom_estat as nom_estat'
         ]);
 
-        return view('gestio/incidencies/index', compact('incidencies'));
+        return view('gestio/incidencies/assigned', compact('incidencies'));
     }
+
 
     /**
      * Show the form for creating a new resource.

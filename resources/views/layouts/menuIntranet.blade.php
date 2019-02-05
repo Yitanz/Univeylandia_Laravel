@@ -76,7 +76,10 @@
               <a class="nav-link nav-interior {{ request()->routeIs('incidencies.create') ? 'active' : '' }}" href="{{URL::route('incidencies.create')}}"><span data-feather="plus-square"></span>Crear Inicidència</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-interior {{ request()->routeIs('incidencies.index') ? 'active' : '' }}" href="{{URL::route('incidencies.index')}}"><span data-feather="file-text"></span>Gestionar Inicidències</a>
+              <a class="nav-link nav-interior {{ request()->routeIs('incidencies.index') ? 'active' : '' }}" href="{{URL::route('incidencies.index')}}"><span data-feather="file-text"></span>Gestionar inicidències a assignar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-interior {{ request()->routeIs('incidencies.assign') ? 'active' : '' }}" href="{{URL::route('incidencies.assign')}}"><span data-feather="file-text"></span>Gestionar inicidències assignades</a>
             </li>
           </ul>
 

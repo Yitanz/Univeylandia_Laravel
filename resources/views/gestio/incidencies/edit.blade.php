@@ -49,13 +49,17 @@
               <label for="assigned-employee">Assignar a:</label>
               <select id="employees" name="assigned-employee" class="form-control form-control-sm">
               @foreach ($treballadors as $treballador)
-                <option value="{{ $treballador->id }}">{{ $treballador->nom }} {{ $treballador->cognom1 }} {{ $treballador->cognom2 }} {{ $treballador->numero_document }}</option>
+                @if($treballador->id == $treballador_assignat->id)
+                  <option selected value="{{ $treballador_assignat->id }}"> {{ $treballador_assignat->nom }} {{ $treballador_assignat->cognom1 }} {{ $treballador_assignat->cognom2 }} {{ $treballador_assignat->numero_document }}</option>
+                @else
+                  <option value="{{ $treballador->id }}">{{ $treballador->nom }} {{ $treballador->cognom1 }} {{ $treballador->cognom2 }} {{ $treballador->numero_document }}</option>
+                @endif
               @endforeach
               </select>
             </div>
           </div>
           <button class="btn btn-primary" type="submit">Assignar</button>
-          <a href="{{ route('incidencies.index') }}" class="btn btn-secondary" type="reset">Cancel·lar</a>
+          <a href="{{ URL::previous() }}" class="btn btn-secondary" type="reset">Cancel·lar</a>
         </form>
 
       </main>

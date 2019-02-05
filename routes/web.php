@@ -40,8 +40,8 @@
 
   Route::get('/home', 'HomeController@index')->name('home');
 
-  Route::resource('gestio/incidencies', 'IncidenciesController');
   Route::get('gestio/incidencies/assign', 'IncidenciesController@assigned')->name('incidencies.assign');
+  Route::resource('gestio/incidencies', 'IncidenciesController');
 
   Route::resource('gestio/empleats', 'EmpleatsController');
 

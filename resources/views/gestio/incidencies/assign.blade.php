@@ -19,7 +19,7 @@
     </div>
     @endif
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Llistat d'incidències a assignar</h1>
+            <h1 class="h2">Llistat d'incidències assignades</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
                 <button class="btn btn-sm btn-outline-secondary">
@@ -66,9 +66,9 @@
                         <td>{{ $incidencia->nom_prioritat }}</td>
                         <td>{{ $incidencia->nom_estat }}</td>
                         <td>{{ $incidencia->nom_usuari_reportador }}</td>
-                        <td></td>
+                        <td>{{ $incidencia->nom_usuari_assignat }}</td>
                         <td><a class="btn btn-success" href="{{ route('incidencies.show', $incidencia->id) }}">Mostrar</a></td>
-                        <td><a class="btn btn-primary" href="{{ route('incidencies.edit', $incidencia->id) }}">Assignar</a></td>
+                        <td><a class="btn btn-primary" href="{{ route('incidencies.edit', $incidencia->id) }}">Modificar</a></td>
                         <td>
                             <form action="{{ route('incidencies.destroy', $incidencia->id)}}" method="post" 
                             onsubmit="return confirm('Estàs segur de voler eliminar la incidència?');">

@@ -61,7 +61,7 @@ class IncidenciesController extends Controller
             'estat_incidencies.nom_estat as nom_estat'
         ]);
 
-        return view('gestio/incidencies/assigned', compact('incidencies'));
+        return view('gestio/incidencies/assign', compact('incidencies'));
     }
 
 
@@ -135,11 +135,13 @@ class IncidenciesController extends Controller
 
         $prioritats = PrioritatIncidencia::all();
 
+        $treballador_assignat = User::findOrFail($incidencia->id_usuari_assignat);
+
         $treballadors = User::where('id_rol', 3)
         ->whereNotNull('email_verified_at')
         ->get();
 
-        return view('gestio/incidencies/edit', compact(['incidencia', 'prioritats', 'treballadors']));
+        return view('gestio/incidencies/edit', compact(['incidencia', 'prioritats', 'treballadors', 'treballador_assignat']));
     }
 
     /**
@@ -167,7 +169,7 @@ class IncidenciesController extends Controller
         $incidencia->id_usuari_assignat = $request->get('assigned-employee');
         $incidencia->save();
 
-        return redirect('gestio/incidencies')->with('success', 'Incidència assignada correctament');
+        return redirect('gestio/incidencies/assign')->with('success', 'Incidència assignada correctament');
     }
 
     /**

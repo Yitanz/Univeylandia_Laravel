@@ -102,7 +102,7 @@
 
         <button type="submit" class="btn btn-primary">Modificar</button>
         <a href="{{ url()->previous() }}" class="btn btn-primary">Cancel·lar</a>
-      
+
 </form>
   </div>
 </div>

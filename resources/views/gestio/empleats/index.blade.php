@@ -22,7 +22,7 @@
             <h1 class="h2">Administrar Empleats</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
-                <button class="btn btn-sm btn-outline-secondary">
+                <button class="btn btn-sm btn-outline-secondary" value="Exportar">
                   <span data-feather="save"></span>
                   Exportar
                 </button>
@@ -77,7 +77,7 @@
                             <form action="{{ route('empleats.destroy', $dades_empleat->id)}}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger" type="submit">Eliminar</button>
+                                <button class="btn btn-danger" type="submit" value="Eliminar">Eliminar</button>
                             </form>
                         </td>
                     </tr>

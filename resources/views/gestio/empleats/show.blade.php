@@ -22,7 +22,7 @@
             <h1 class="h2">Administrar Empleats SHOW</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
-                <button class="btn btn-sm btn-outline-secondary">
+                <button class="btn btn-sm btn-outline-secondary" value="Exportar">
                   <span data-feather="save"></span>
                   Exportar
                 </button>
@@ -31,7 +31,7 @@
           </div>
 
             <h1>{{$dades_empleat->especialitat}}<h1>
-                   
+
     </div>
    </main>
 @endsection

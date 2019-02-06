@@ -77,7 +77,7 @@
             </div>
             <div class="form-group">
             <input type="file" name="image" class="form-control form-control-sm">
-        </div>  
+        </div>
           </div>
             <button class="btn btn-primary" type="submit">Crear</button>
           <button class="btn btn-secondary" type="reset">Cancel·lar</button>

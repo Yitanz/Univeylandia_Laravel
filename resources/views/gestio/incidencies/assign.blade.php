@@ -22,7 +22,7 @@
             <h1 class="h2">Llistat d'incidències assignades</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
-                <button class="btn btn-sm btn-outline-secondary">
+                <button class="btn btn-sm btn-outline-secondary" value="Exportar">
                   <span data-feather="save"></span>
                   Exportar
                 </button>
@@ -70,11 +70,11 @@
                         <td><a class="btn btn-success" href="{{ route('incidencies.show', $incidencia->id) }}">Mostrar</a></td>
                         <td><a class="btn btn-primary" href="{{ route('incidencies.edit', $incidencia->id) }}">Modificar</a></td>
                         <td>
-                            <form action="{{ route('incidencies.destroy', $incidencia->id)}}" method="post" 
+                            <form action="{{ route('incidencies.destroy', $incidencia->id)}}" method="post"
                             onsubmit="return confirm('Estàs segur de voler eliminar la incidència?');">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger" type="submit">Eliminar</button>
+                                <button class="btn btn-danger" type="submit" value="Eliminar">Eliminar</button>
                             </form>
                         </td>
                     </tr>

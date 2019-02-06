@@ -17,7 +17,7 @@
                 <div class="col-md-6 mb-3">
                   <label for="codi_seg_social">codi_seg_social: </label>
                   <input type='text' class='form-control form-control-sm' name='codi_seg_social' value='{{$dades_empleats->codi_seg_social}}'>
-                    
+
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="num_nomina">Num nomina: </label>
@@ -52,9 +52,9 @@
                     </select>
                 </div>
               </div>
-            <button class="btn btn-primary" type="submit">Modificar</button>
-            <button class="btn btn-primary" type="reset">Borrar camps</button>
-            <button class="btn btn-secondary" type="reset">Cancel·lar</button>
+            <button class="btn btn-primary" type="submit" value="Modificar">Modificar</button>
+            <button class="btn btn-primary" type="reset" value="Borrar els camps">Borrar camps</button>
+            <button class="btn btn-secondary" type="reset" value="Cancel·lar">Cancel·lar</button>
          </form>
         </main>
 @endsection

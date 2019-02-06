@@ -28,11 +28,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
   <script>
-  $(function() {
-      $('.dropdown-toggle').click(function() {
-          $(this).next('.dropdown-menu').fadeToggle(300);
-      });
-  });
-</script>
+    $(function() {
+        $('.dropdown-toggle').click(function() {
+            $(this).next('.dropdown-menu').fadeToggle(300);
+        });
+    });
+  </script>
 </body>
 </html>

@@ -13,7 +13,7 @@
         <div class="row">
         <div class="col-md-5">
           <div class="col-md-12 px-4">
-            <h5>Selecciona l'Atracció a assignar</h5>
+            <h5>Selecciona la Zona a assignar</h5>
           </div>
          <form class="needs-validation" method="post" action="{{ route('serveis.store') }}">
            @csrf
@@ -39,13 +39,16 @@
 
         </table>
         <br/>
-      <!--  <input class="form-control" type="date" name="data_inici_assign">
+        <h5>Selecciona la data d'inici</h5>
+      <input class="form-control" type="date" name="data_inici_assign">
         <br/>
+        <h5>Selecciona la data límit</h5>
         <input class="form-control" type="date" name="data_fi_assign">
-        <br/>-->
+        <br/>
         <br/>
         <table class="table">
           <thead>
+            <h5>Selecciona el tipus de Servei</h5>
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Nom Servei</th>

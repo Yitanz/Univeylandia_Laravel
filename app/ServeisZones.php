@@ -11,7 +11,10 @@ class ServeisZones extends Model
   protected $fillable = [
       'id_zona',
       'id_servei',
-      'id_empleat'
+      'id_empleat',
+      'data_inici',
+      'data_fi',
+      'id_estat'
   ];
-  
+
 }

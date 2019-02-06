@@ -7,58 +7,101 @@
 @section("body")
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h2>Editar Incidència: {{ $incidencia->titol }}</h2>
+          <h2>Registrar Assignacions de Serveis Atraccio-Empleat</h2>
         </div>
 
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
-        <form method="post" action="{{ route('serveis.update', $servei->id) }}">
-            @method('PATCH')
-            @csrf
-          <div class="form-group">
-            <div class="col-md-6 mb-3">
-              <label for="title">Títol</label>
-              <input type="text" class="form-control form-control-sm" name="title" value="{{ $servei->titol }}" readonly>
-            </div>
-            <div class="col-md-6 mb-3">
-              <div class="form-group">
-                <label for="description">Descripció</label>
-                <textarea class="form-control form-control-sm" style="resize:none" name="description" rows="3" readonly>{{ $servei->descripcio }}</textarea>
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="priority">Prioritat</label>
-              <select class="form-control form-control-sm" name="priority">
-              @foreach ($prioritats as $prioritat)
-                @if ($incidencia->id_prioritat == $prioritat->id)
-                <option selected value="{{ $incidencia->id_prioritat }}">{{ $prioritat->nom_prioritat }}</option>
-                @else
-                <option value="{{ $prioritat->id }}">{{ $prioritat->nom_prioritat }}</option>
-                @endif
-              @endforeach
-              </select>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="assigned-employee">Assignar a:</label>
-              <select id="employees" name="assigned-employee" class="form-control form-control-sm">
-              @foreach ($treballadors as $treballador)
-                <option value="{{ $treballador->id }}">{{ $treballador->nom }} {{ $treballador->cognom1 }} {{ $treballador->cognom2 }} {{ $treballador->numero_document }}</option>
-              @endforeach
-              </select>
-            </div>
+        <div class="row">
+        <div class="col-md-5">
+          <div class="col-md-12 px-4">
+            <h5>Selecciona la Zona a assignar</h5>
           </div>
-          <button class="btn btn-primary" type="submit">Assignar</button>
-          <a href="{{ route('incidencies.index') }}" class="btn btn-secondary" type="reset">Cancel·lar</a>
-        </form>
+         <form class="needs-validation" method="post" action="{{ route('serveis.store') }}">
+           @csrf
+           <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Nom</th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+          <tbody>
+            @foreach($zones as $zona)
+            <tr>
+                <td>{{ $zona->id }}</td>
+                <td>{{ $zona->nom }}</td>
+              <td><input type="radio" class="form-check-input" name="seleccio_zona" value="{{ $zona->id }}"></td>
+            </tr>
+            @endforeach
+          </tbody>
 
-      </main>
+
+        </table>
+        <br/>
+        <h5>Selecciona la data d'inici</h5>
+      <input class="form-control" type="date" name="data_inici_assign">
+        <br/>
+        <h5>Selecciona la data límit</h5>
+        <input class="form-control" type="date" name="data_fi_assign">
+        <br/>
+        <br/>
+        <table class="table">
+          <thead>
+            <h5>Selecciona el tipus de Servei</h5>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nom Servei</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($serveis as $servei)
+            <tr>
+              <td>{{ $servei->id }}</td>
+              <td>{{ $servei->nom }}</td>
+              <td><input type="radio" class="form-check-input" name="nom_servei" value="{{ $servei->id }}"></td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="col-md-12 px-4">
+            <h5>Selecciona l'Empleat a assignar</h5>
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Cog 1</th>
+                <th scope="col">Cog 2</th>
+                <th scope="col">DNI</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($treballadors as $treballador)
+              <tr>
+                  <td>{{ $treballador->id }}</td>
+                  <td>{{ $treballador->nom }}</td>
+                  <td>{{ $treballador->cognom1 }}</td>
+                  <td>{{ $treballador->cognom2 }}</td>
+                  <td>{{ $treballador->numero_document }}</td>
+                <td><input type="checkbox" class="form-check-input" name="seleccio_empleat" value="{{ $treballador->id }}">
+                </td>
+              </tr>
+              @endforeach
+            </tbody>
+      </table>
+
+      <button class="btn btn-primary" type="submit">Modificar Assignació</button>
+    </form>
 
 
 @endsection

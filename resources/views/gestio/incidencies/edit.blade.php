@@ -58,7 +58,7 @@
               </select>
             </div>
           </div>
-          <button class="btn btn-primary" type="submit">Assignar</button>
+          <button class="btn btn-primary" type="submit" value="Assignar">Assignar</button>
           <a href="{{ URL::previous() }}" class="btn btn-secondary" type="reset">Cancel·lar</a>
         </form>
 

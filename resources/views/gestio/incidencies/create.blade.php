@@ -41,8 +41,8 @@
               </select>
             </div>
           </div>
-          <button class="btn btn-primary" type="submit">Crear</button>
-          <button class="btn btn-secondary" type="reset">Cancel·lar</button>
+          <button class="btn btn-primary" type="submit" value="Crear">Crear</button>
+          <button class="btn btn-secondary" type="reset" value="Cancel·lar">Cancel·lar</button>
         </form>
 
       </main>

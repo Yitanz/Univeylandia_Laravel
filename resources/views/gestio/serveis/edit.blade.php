@@ -100,7 +100,7 @@
             </tbody>
       </table>
 
-      <button class="btn btn-primary" type="submit">Modificar Assignació</button>
+      <button class="btn btn-primary" type="submit" value="Modificar assignació">Modificar Assignació</button>
     </form>
 
 

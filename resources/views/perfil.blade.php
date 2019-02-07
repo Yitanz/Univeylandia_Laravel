@@ -9,7 +9,7 @@
     <div class="row justify-content-center align-items-center">
         <div class="card" style="width: 22rem;">
             <div class="card-body">
-                <img src="/img/hotel.jpg" class="rounded-circle" alt="Cinque Terre" width="304" height="236">
+                <img src="/img/hotel.jpg" class="rounded-circle" alt="imatge de perfil" width="304" height="236">
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><strong>Nom: </strong>{{ Auth::user()->nom }}</li>

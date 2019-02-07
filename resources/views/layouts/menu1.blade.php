@@ -20,11 +20,53 @@
           <a class="nav-link" href="{{ route('register') }}">{{ __('Registre') }}</a>
         </li>
         @endif
-      @else
+      @elseif(Auth::user()->id_rol == 3)
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->nom }} {{ Auth::user()->cognom1 }}</a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item" href="#">Perfil</a></li>
+          <li><a class="dropdown-item" href="{{ route('perfil') }}">Perfil</a></li>
+          <li><a class="dropdown-item" href="{{ route('incidencia') }}">Incidències</a></li>
+
+          <li>
+            <a class="dropdown-item" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
+              Logout
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+            </form>
+          </li>
+        </ul>
+      </li>
+      @elseif(Auth::user()->id_rol == 2)
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->nom }} {{ Auth::user()->cognom1 }}</a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li><a class="dropdown-item" href="{{ route('perfil') }}">Perfil</a></li>
+          <li><a class="dropdown-item" href="{{ route('incidencia') }}">Incidències</a></li>
+          <li><a class="dropdown-item" href="{{ route('gestio') }}">Gestió</a></li>
+
+          <li>
+            <a class="dropdown-item" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
+              Logout
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+            </form>
+          </li>
+        </ul>
+      </li>
+      @elseif(Auth::user()->id_rol == 1)
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->nom }} {{ Auth::user()->cognom1 }}</a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li><a class="dropdown-item" href="{{ route('perfil') }}">Perfil</a></li>
+          <li><a class="dropdown-item" href="{{ route('incidencia') }}">Incidències</a></li>
 
           <li>
             <a class="dropdown-item" href="{{ route('logout') }}"

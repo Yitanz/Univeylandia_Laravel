@@ -14,7 +14,7 @@ class HomeController extends Controller
     public function __construct()
     {
         //Add Verified middleware
-        $this->middleware(['auth', 'verified']);
+        //$this->middleware(['auth', 'verified']);
     }
 
     /**
@@ -24,6 +24,51 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('index');
+    }
+
+    public function noticies()
+    {
+      return view('noticies');
+    }
+  
+    public function promocions()
+    {
+      return view("promocions");
+    }
+    
+    public function atraccions()
+    {
+      return view("atraccions");
+    }
+  
+    public function entrades()
+    {
+      return view("entrades");
+    }
+  
+    public function login()
+    {
+      return view("login");
+    }
+  
+    public function contacte()
+    {
+      return view("contacte");
+    }
+  
+    public function gestio()
+    {
+      return view("gestio/index");
+    }
+
+    public function perfil()
+    {
+        return view('perfil');
+    }
+
+    public function incidencia()
+    {
+        return view('incidencia');
     }
 }

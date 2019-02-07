@@ -1,4 +1,4 @@
-<div class="jumbotron text-center" width="100%" style="margin-bottom:0">
+<div class="jumbotron text-center mt-3" width="100%" style="margin-bottom:0">
   <div class="row">
 
       <div class="col-sm-2">
@@ -27,7 +27,7 @@
           <li><a href="{{ route('noticies') }}">Noticies</a></li>
           <li><a href="{{ route('promocions') }}">Promocions</a></li>
           <li><a href="{{ route('atraccions') }}">Atraccions</a></li>
-          <li><a href="{{ route('parc') }}">Compra d'entrades</a></li>
+          <li><a href="{{ route('entrades') }}">Compra d'entrades</a></li>
         </ul>
       </div>
 

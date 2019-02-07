@@ -1,4 +1,4 @@
-@extends("layouts.plantillaGestio")
+@extends("layouts.gestio")
 
 @section("navbarIntranet")
 @endsection
@@ -49,7 +49,7 @@
               </datalist>
             </div>
           </div>
-          <a href="{{ route('incidencies.index') }}" class="btn btn-secondary" type="reset">Cancel·lar</a>
+          <a href="{{ URL::previous() }}" class="btn btn-secondary" type="reset">Cancel·lar</a>
         </form>
 
       </main>

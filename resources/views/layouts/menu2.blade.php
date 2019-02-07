@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark py-4">
-  <a class="navbar-brand" href="{{URL::route('inici')}}">Univeylandia</a>
+  <a class="navbar-brand" href="{{URL::route('home')}}">Univeylandia</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -16,7 +16,10 @@
         <a class="nav-link" href="{{URL::route('atraccions')}}">Atraccions</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link" href="{{URL::route('parc')}}">Compra entrades</a>
+        <a class="nav-link" href="{{URL::route('entrades')}}">Compra entrades</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" href="{{URL::route('contacte')}}">Contacte</a>
       </li>
 
     </ul>

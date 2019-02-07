@@ -1,4 +1,4 @@
-@extends("layouts.plantillaGestio")
+@extends("layouts.gestio")
 
 @section("navbarIntranet")
 @endsection

@@ -11,10 +11,6 @@ use Auth;
 
 class IncidenciesController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['auth', 'is_admin']);
-    }
 
     /**
      * Display a listing of the incidences to assign.
@@ -78,6 +74,18 @@ class IncidenciesController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function report()
+    {
+        $prioritats = PrioritatIncidencia::all();
+
+        return view('incidencia', compact('prioritats'));
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -88,7 +96,7 @@ class IncidenciesController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'priority' => 'required'
+            'priority' => 'required|integer'
         ]);
 
         $user = Auth::user();
@@ -101,6 +109,7 @@ class IncidenciesController extends Controller
             'id_usuari_reportador' => $user->id,
         ]);
         $incidencia->save();
+
         return redirect('/gestio/incidencies')->with('success', 'Incidència creada correctament');
     }
 
@@ -184,7 +193,7 @@ class IncidenciesController extends Controller
 
         $incidencia->delete();
 
-        return redirect('gestio/incidencies')->with('success', 'Incidència eliminada correctament');
+        return redirect()->back()->with('success', 'Incidència eliminada correctament');
     }
 
     /**

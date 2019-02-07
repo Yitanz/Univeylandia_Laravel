@@ -15,12 +15,12 @@
   <div class ="row">
     <div class="col-sm-6">
       <a href="{{ url('/promocions/promocio_x')}}">
-        <img src="/img/promocions/promocio1.jpg" class="img-fluid" alt="Responsive image">
+        <img src="/img/promocions/promocio1.jpg" class="img-fluid" alt="imatge promocio">
       </a>
     </div>
     <div class="col-sm-6">
       <a href="{{ url('/promocions/promocio_x')}}">
-        <img src="/img/promocions/promocio1.jpg" class="img-fluid" alt="Responsive image">
+        <img src="/img/promocions/promocio1.jpg" class="img-fluid" alt="imatge promocio">
       </a>
     </div>
   </div>
@@ -28,7 +28,7 @@
   <div class ="row">
     <div class="col-sm-12">
       <a href="{{ url('/promocions/promocio_x')}}">
-        <img src="/img/promocions/promocio1.jpg" class="img-fluid" alt="Responsive image">
+        <img src="/img/promocions/promocio1.jpg" class="img-fluid" alt="imatge promocio">
       </a>
     </div>
   </div>
@@ -36,22 +36,22 @@
   <div class ="row">
     <div class="col-sm-3">
       <a href="{{ url('/promocions/promocio_x')}}">
-        <img src="/img/promocions/promocio1.jpg" class="img-fluid" alt="Responsive image">
+        <img src="/img/promocions/promocio1.jpg" class="img-fluid" alt="imatge promocio">
       </a>
     </div>
     <div class="col-sm-3">
       <a href="{{ url('/promocions/promocio_x')}}">
-        <img src="/img/promocions/promocio1.jpg" class="img-fluid" alt="Responsive image">
+        <img src="/img/promocions/promocio1.jpg" class="img-fluid" alt="imatge promocio">
       </a>
     </div>
     <div class="col-sm-3">
       <a href="{{ url('/promocions/promocio_x')}}">
-        <img src="/img/promocions/promocio1.jpg" class="img-fluid" alt="Responsive image">
+        <img src="/img/promocions/promocio1.jpg" class="img-fluid" alt="imatge promocio">
       </a>
     </div>
     <div class="col-sm-3">
       <a href="{{ url('/promocions/promocio_x')}}">
-        <img src="/img/promocions/promocio1.jpg" class="img-fluid" alt="Responsive image">
+        <img src="/img/promocions/promocio1.jpg" class="img-fluid" alt="imatge promocio">
       </a>
     </div>
   </div>

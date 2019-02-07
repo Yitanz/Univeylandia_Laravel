@@ -14,7 +14,7 @@
   <body class="text-center">
     <!--<form class="form-signin" method="post" action="php/validateLogin.php">-->
     <form class="form-signin" method="post" action="">
-      <img class="mb-4" src="img/logo.png" alt="" width="220" height="75">
+      <img class="mb-4" src="img/logo.png" alt="logo" width="220" height="75">
       <h1 class="h3 mb-3 font-weight-normal">Iniciar sessió</h1>
       <label for="inputEmail" class="sr-only">Usuari</label>
       <input type="email" id="inputEmail" class="form-control" placeholder="Email" name="email" value="" required autofocus>

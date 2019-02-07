@@ -73,17 +73,7 @@ class IncidenciesController extends Controller
         return view('gestio/incidencies/create', compact('prioritats'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function report()
-    {
-        $prioritats = PrioritatIncidencia::all();
 
-        return view('incidencia', compact('prioritats'));
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -108,6 +98,7 @@ class IncidenciesController extends Controller
             'id_estat' => 1,
             'id_usuari_reportador' => $user->id,
         ]);
+
         $incidencia->save();
 
         return redirect('/gestio/incidencies')->with('success', 'Incidència creada correctament');

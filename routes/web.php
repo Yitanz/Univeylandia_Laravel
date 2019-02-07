@@ -24,6 +24,7 @@
  /* RUTES GRUP 1 */
  Auth::routes(['verify' => true]);
 
+ Route::post('/incidencia', 'HomeController@store_incidencia')->name('incidencia')->middleware('auth');
  //Route::get('/home', 'HomeController@index')->name('home');
 
  Route::get('gestio/incidencies/assign', 'IncidenciesController@assigned')->name('incidencies.assign');

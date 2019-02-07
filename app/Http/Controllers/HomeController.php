@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Incidencia;
+use \App\PrioritatIncidencia;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -64,11 +67,42 @@ class HomeController extends Controller
 
     public function perfil()
     {
-        return view('perfil');
+      return view('perfil');
     }
 
     public function incidencia()
     {
-        return view('incidencia');
+      $prioritats = PrioritatIncidencia::all();
+
+      return view('incidencia', compact('prioritats'));
+    }
+
+        /**
+     * Store a newly created client resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store_incidencia(Request $request)
+    {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'priority' => 'required|integer'
+        ]);
+
+        $user = Auth::user();
+
+        $incidencia = new Incidencia([
+            'titol' => $request->get('title'),
+            'descripcio' => $request->get('description'),
+            'id_prioritat' => $request->get('priority'),
+            'id_estat' => 1,
+            'id_usuari_reportador' => $user->id,
+        ]);
+        
+        $incidencia->save();
+
+        return redirect('incidencia')->with('success', 'Incidència reportada correctament');
     }
 }

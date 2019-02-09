@@ -53,7 +53,6 @@
                         <th>Prioritat</th>
                         <th>Estat</th>
                         <th>Reportador</th>
-                        <th>Assignat a</th>
                         <th colspan="3">Acció</th>
                         </tr>
                     </thead>
@@ -66,7 +65,6 @@
                         <td>{{ $incidencia->nom_prioritat }}</td>
                         <td>{{ $incidencia->nom_estat }}</td>
                         <td>{{ $incidencia->nom_usuari_reportador }}</td>
-                        <td></td>
                         <td><a class="btn btn-success" href="{{ route('incidencies.show', $incidencia->id) }}">Mostrar</a></td>
                         <td><a class="btn btn-primary" href="{{ route('incidencies.edit', $incidencia->id) }}">Assignar</a></td>
                         <td>

@@ -2,14 +2,14 @@
   <div class="collapse navbar-collapse flex-row-reverse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Idioma      </a>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ __('Idioma') }}</a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item" href="#">ES</a></li>
-          <li><a class="dropdown-item" href="#">CA</a></li>
+          <li><a class="dropdown-item" href="#">{{ __('ES') }}</a></li>
+          <li><a class="dropdown-item" href="#">{{ __('CA') }}</a></li>
         </ul>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/img/mapa_parc.jpg">Mapa</a>
+        <a class="nav-link" href="/img/mapa_parc.jpg">{{ __('Mapa') }}</a>
       </li>
       @guest
       <li class="nav-item">
@@ -24,14 +24,14 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->nom }} {{ Auth::user()->cognom1 }}</a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item" href="{{ route('perfil') }}">Perfil</a></li>
-          <li><a class="dropdown-item" href="{{ route('incidencia') }}">Incidències</a></li>
+          <li><a class="dropdown-item" href="{{ route('perfil') }}">{{ __('Perfil') }}</a></li>
+          <li><a class="dropdown-item" href="{{ route('incidencia') }}">{{ __('Incidències') }}</a></li>
 
           <li>
             <a class="dropdown-item" href="{{ route('logout') }}"
               onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
-              Logout
+              {{ __('Logout') }}
             </a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -44,15 +44,15 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->nom }} {{ Auth::user()->cognom1 }}</a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item" href="{{ route('perfil') }}">Perfil</a></li>
-          <li><a class="dropdown-item" href="{{ route('incidencia') }}">Incidències</a></li>
-          <li><a class="dropdown-item" href="{{ route('gestio') }}">Gestió</a></li>
+          <li><a class="dropdown-item" href="{{ route('perfil') }}">{{ __('Perfil') }}</a></li>
+          <li><a class="dropdown-item" href="{{ route('incidencia') }}">{{ __('Incidències') }}</a></li>
+          <li><a class="dropdown-item" href="{{ route('gestio') }}">{{ __('Gestió') }}</a></li>
 
           <li>
             <a class="dropdown-item" href="{{ route('logout') }}"
               onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
-              Logout
+              {{ __('Logout') }}
             </a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -65,14 +65,14 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->nom }} {{ Auth::user()->cognom1 }}</a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item" href="{{ route('perfil') }}">Perfil</a></li>
-          <li><a class="dropdown-item" href="{{ route('incidencia') }}">Incidències</a></li>
+          <li><a class="dropdown-item" href="{{ route('perfil') }}">{{ __('Perfil') }}</a></li>
+          <li><a class="dropdown-item" href="{{ route('incidencia') }}">{{ __('Incidències') }}</a></li>
 
           <li>
             <a class="dropdown-item" href="{{ route('logout') }}"
               onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
-              Logout
+              {{ __('Logout') }}
             </a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

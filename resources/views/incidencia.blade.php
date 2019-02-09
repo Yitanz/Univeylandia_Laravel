@@ -29,7 +29,7 @@
                 <input type="text" class="form-control" name="title" id="title" required>
             </div>
             <div class="form-group">
-                <label for="description">Missatge</label>
+                <label for="description">Descripció</label>
                 <textarea type="text" class="form-control" style="resize:none" name="description" rows="5" required></textarea>
             </div>
             <div class="form-group">

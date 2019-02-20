@@ -1,4 +1,4 @@
-@extends("layouts.plantillaGestio")
+@extends("layouts.gestio")
 
 @section("navbarIntranet")
 @endsection
@@ -100,7 +100,7 @@
             </tbody>
       </table>
 
-      <button class="btn btn-primary" type="submit">Crear Assignacio</button>
+      <button class="btn btn-primary" type="submit" value="Crear assignació">Crear Assignacio</button>
     </form>
 
 

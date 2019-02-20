@@ -10,58 +10,41 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
- Route::get('/',"paginesParc@inici");
- Route::get('/noticies',"paginesParc@noticies");
- Route::get('/promocions',"paginesParc@promocions");
- Route::get('/atraccions',"paginesParc@atraccions");
- Route::get('/hotel',"paginesParc@hotel");
- Route::get('/habitacions',"paginesParc@habitacions");
- Route::get('/restaurant',"paginesParc@restaurant");
- Route::get('/parc',"paginesParc@parc");
- Route::get('/parcHotel',"paginesParc@parcHotel");
- Route::get('/gestio',"paginesParc@gestio");
- Route::get('/login',"paginesParc@login");
-/**
-*Links pagines parc
-*/
- Route::any('/', array('as' => 'inici','uses' => 'paginesParc@inici'));
- Route::any('/noticies', array('as' => 'noticies','uses' => 'paginesParc@noticies'));
- Route::any('/promocions', array('as' => 'promocions','uses' => 'paginesParc@promocions'));
- Route::any('/atraccions', array('as' => 'atraccions','uses' => 'paginesParc@atraccions'));
- Route::any('/habitacions', array('as' => 'habitacions','uses' => 'paginesParc@habitacions'));
- Route::any('/restaurant', array('as' => 'restaurant','uses' => 'paginesParc@restaurant'));
- Route::any('/parc', array('as' => 'parc','uses' => 'paginesParc@parc'));
- Route::any('/parcHotel', array('as' => 'parcHotel','uses' => 'paginesParc@parcHotel'));
- Route::any('login', array('as' => 'login','uses' => 'paginesParc@login'));
- Route::any('/gestio', array('as' => 'gestio','uses' => 'intranetController@inici'));
+ Route::get('/',"HomeController@index")->name('home');
+ Route::get('/contacte','HomeController@contacte')->name('contacte');
+ Route::get('/noticies',"HomeController@noticies")->name('noticies');
+ Route::get('/promocions',"HomeController@promocions")->name('promocions');
+ Route::get('/atraccions',"HomeController@atraccions")->name('atraccions');
+ Route::get('/entrades',"HomeController@entrades")->name('entrades');
+ Route::get('/gestio',"HomeController@gestio")->name('gestio')->middleware(['auth','is_admin','verified']);
+ Route::get('/perfil',"HomeController@perfil")->name('perfil')->middleware(['auth','verified']);
+ Route::get('/incidencia',"HomeController@incidencia")->name('incidencia')->middleware(['auth','verified']);
+ 
+ /* RUTES GRUP 1 */
+ Auth::routes(['verify' => true]);
 
-  /* RUTES GRUP 1 */
-  Auth::routes(['verify' => true]);
+ Route::post('/incidencia', 'HomeController@store_incidencia')->name('incidencia')->middleware(['auth','verified']);
+ //Route::get('/home', 'HomeController@index')->name('home');
 
-  Route::get('/home', 'HomeController@index')->name('home');
+ Route::get('gestio/incidencies/assign', 'IncidenciesController@assigned')->name('incidencies.assign');
 
-  Route::get('gestio/incidencies/assign', 'IncidenciesController@assigned')->name('incidencies.assign');
-  Route::resource('gestio/incidencies', 'IncidenciesController');
+ Route::resource('gestio/incidencies', 'IncidenciesController')->middleware(['auth','is_admin','verified']);
 
-  Route::resource('gestio/empleats', 'EmpleatsController');
+ Route::resource('gestio/empleats', 'EmpleatsController')->middleware(['auth','is_admin','verified']);
 
-  Route::resource('gestio/zones', 'ZonesController');
+ Route::resource('gestio/zones', 'ZonesController')->middleware(['auth','is_admin','verified']);
 
-  Route::resource('gestio/serveis', 'ServeisController');
+ Route::resource('gestio/serveis', 'ServeisController')->middleware(['auth','is_admin','verified']);
 
-  Route::get('promocions/promocio_x', ['as' => 'promocio_x', function(){
-    $title = "Promoció X";
-    return view ('vistesparc/promocio_x', compact('title'));
-  }]);
+ Route::get('promocions/promocio_x', ['as' => 'promocio_x', function(){
+   $title = "Promoció X";
+   return view ('vistesparc/promocio_x', compact('title'));
+ }]);
 
-  Route::get('cistella',['as' => 'promocio_x', function(){
-    $title = "Cistella";
-    return view ('vistesparc/cistella', compact('title'));
-  }])->middleware('auth');
+ Route::get('cistella',['as' => 'promocio_x', function(){
+   $title = "Cistella";
+   return view ('vistesparc/cistella', compact('title'));
+ }])->middleware('auth');
 
-
-  /* RUTES GRUP 2 */
-  Route::resource('/gestio/atraccions', 'AtraccionsController');
-
-  Route::get('/gestio/atraccions/image', 'AtraccionsController@store')->name('image.upload');
-  Route::post('/gestio/atraccions/image', 'AtraccionsController@store')->name('image.upload.post');
+ /* RUTES GRUP 2 */
+ Route::resource('/gestio/atraccions', 'AtraccionsController')->middleware(['auth','is_admin','verified']);

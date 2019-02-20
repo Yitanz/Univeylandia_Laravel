@@ -1,4 +1,4 @@
-@extends("layouts.plantillaGestio")
+@extends("layouts.gestio")
 
 @section("navbarIntranet")
 @endsection
@@ -40,10 +40,10 @@
                 <div class="col-md-6 mb-3">
                   <label for="date_fi_contracte">date_fi_contracte: </label>
                     <input type="date" class="form-control" id="date_fi_contracte" name="date_fi_contracte"> <br>
-                </div>  
+                </div>
               </div>
-            <button class="btn btn-primary" type="submit">Crear</button>
-            <button class="btn btn-secondary" type="reset">Cancel·lar</button>
+            <button class="btn btn-primary" type="submit" value="Crear">Crear</button>
+            <button class="btn btn-secondary" type="reset" value="Cancel·lar">Cancel·lar</button>
          </form>
         </main>
 @endsection

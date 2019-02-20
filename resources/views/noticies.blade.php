@@ -23,7 +23,7 @@
             <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
               <a href="#">Continuar llegint</a>
           </div>
-          <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap" style="width: 200px; height: 250px;" src="../img/slider1.jpg">
+          <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="imatge de la noticia" style="width: 200px; height: 250px;" src="../img/slider1.jpg">
     </div>
   </div>
   <div class="col-sm-6">
@@ -36,7 +36,7 @@
           <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
             <a href="#">Continue reading</a>
         </div>
-        <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap" style="width: 200px; height: 250px;" src="../img/slider1.jpg">
+        <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="imatge de la noticia" style="width: 200px; height: 250px;" src="../img/slider1.jpg">
       </div>
   </div>
 </div>
@@ -52,7 +52,7 @@
           <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
             <a href="#">Continuar llegint</a>
         </div>
-        <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap" style="width: 200px; height: 250px;" src="../img/slider1.jpg">
+        <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="imatge de la noticia" style="width: 200px; height: 250px;" src="../img/slider1.jpg">
   </div>
 </div>
 <div class="col-sm-6">
@@ -65,7 +65,7 @@
         <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
           <a href="#">Continue reading</a>
       </div>
-      <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap" style="width: 200px; height: 250px;" src="../img/slider1.jpg">
+      <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="imatge de la noticia" style="width: 200px; height: 250px;" src="../img/slider1.jpg">
     </div>
 </div>
 </div>
@@ -81,7 +81,7 @@
           <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
             <a href="#">Continuar llegint</a>
         </div>
-        <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap" style="width: 200px; height: 250px;" src="../img/slider1.jpg">
+        <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="imatge de la noticia" style="width: 200px; height: 250px;" src="../img/slider1.jpg">
   </div>
 </div>
 <div class="col-sm-6">
@@ -94,7 +94,7 @@
         <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
           <a href="#">Continue reading</a>
       </div>
-      <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap" style="width: 200px; height: 250px;" src="../img/slider1.jpg">
+      <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="imatge de la noticia" style="width: 200px; height: 250px;" src="../img/slider1.jpg">
     </div>
 </div>
 </div>
@@ -110,7 +110,7 @@
           <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
             <a href="#">Continuar llegint</a>
         </div>
-        <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap" style="width: 200px; height: 250px;" src="../img/slider1.jpg">
+        <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="imatge de la noticia" style="width: 200px; height: 250px;" src="../img/slider1.jpg">
   </div>
 </div>
 <div class="col-sm-6">
@@ -123,9 +123,10 @@
         <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
           <a href="#">Continue reading</a>
       </div>
-      <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap" style="width: 200px; height: 250px;" src="../img/slider1.jpg">
+      <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="imatge de la noticia" style="width: 200px; height: 250px;" src="../img/slider1.jpg">
     </div>
   </div>
+</div>
 </div>
 
 @endsection

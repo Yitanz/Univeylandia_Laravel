@@ -15,7 +15,7 @@
   <div class ="row">
     <div class="col-sm-12">
       <a href="{{ url('/promocions/promocio_x')}}">
-        <img src="/img/promocions/promocio1.jpg" class="img-fluid" alt="Responsive image">
+        <img src="/img/promocions/promocio1.jpg" class="img-fluid" alt="imatge de la promocio">
       </a>
     </div>
   </div>

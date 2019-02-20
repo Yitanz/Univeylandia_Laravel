@@ -1,4 +1,4 @@
-@extends("layouts.plantillaGestio")
+@extends("layouts.gestio")
 
 @section("navbarIntranet")
 @endsection
@@ -24,7 +24,7 @@
             <h1 class="h2">Administrar Zones</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
-                <button class="btn btn-sm btn-outline-secondary">
+                <button class="btn btn-sm btn-outline-secondary" value="Exportar">
                   <span data-feather="save"></span>
                   Exportar
                 </button>
@@ -66,7 +66,7 @@
                               onsubmit="return confirm('Estàs segur de voler eliminar la zona?');">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger" type="submit">Eliminar</button>
+                                <button class="btn btn-danger" type="submit" value="Eliminar">Eliminar</button>
                             </form>
                         </td>
                     </tr>

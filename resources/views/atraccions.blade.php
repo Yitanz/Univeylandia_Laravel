@@ -16,7 +16,7 @@
       <div class="col-sm-4">
         <div class="container">
           <div class="card" style="width:400px">
-            <img class="card-img-top" src="/img/tornado.jpg" alt="Card image" style="width:100%" >
+            <img class="card-img-top" src="/img/tornado.jpg" alt="Imatge atracció tornado" style="width:100%" >
             <div class="card-body">
               <h4 class="card-title">Tornado</h4>
               <p class="card-text">Una atracció 3xM: Màxima velocitat Màxima adrenalina i Màxima Seguritat</p>
@@ -27,7 +27,7 @@
   <div class="col-sm-4">
     <div class="container">
       <div class="card" style="width:400px">
-        <img class="card-img-top" src="/img/tremor.jpg" alt="Card image" style="width:100%">
+        <img class="card-img-top" src="/img/tremor.jpg" alt="Imatge atracció tremor" style="width:100%">
         <div class="card-body">
           <h4 class="card-title">Tremor</h4>
           <p class="card-text">La por recorrerà tot el teu cos,conseguiràs arribar al final?</p>
@@ -38,7 +38,7 @@
 <div class="col-sm-4">
   <div class="container">
     <div class="card" style="width:400px">
-      <img class="card-img-top" src="/img/rodeo.jpg" alt="Card image" style="width:100%">
+      <img class="card-img-top" src="/img/rodeo.jpg" alt="Imatge atracció rodeo" style="width:100%">
       <div class="card-body">
         <h4 class="card-title">Guadaña</h4>
         <p class="card-text">No podràs escapar de la caiguda lliure més espectacular del país.</p>
@@ -56,7 +56,7 @@
     <div class="col-sm-4">
       <div class="container">
         <div class="card" style="width:400px">
-          <img class="card-img-top" src="/img/rodeo.jpg" alt="Card image" style="width:100%" >
+          <img class="card-img-top" src="/img/rodeo.jpg" alt="Imatge atracció Rodeo" style="width:100%" >
           <div class="card-body">
             <h4 class="card-title">Rodeo</h4>
             <p class="card-text">Una muntanya rusa rapida i perillosa com un bou de Rodeo!</p>
@@ -67,7 +67,7 @@
 <div class="col-sm-4">
   <div class="container">
     <div class="card" style="width:400px">
-      <img class="card-img-top" src="/img/samoa.jpg" alt="Card image" style="width:100%">
+      <img class="card-img-top" src="/img/samoa.jpg" alt="Imatge atracció samoa" style="width:100%">
       <div class="card-body">
         <h4 class="card-title">Samoa</h4>
         <p class="card-text">Et mullaràs si o si, la caiguda més refrescant del parc!</p>
@@ -78,7 +78,7 @@
 <div class="col-sm-4">
 <div class="container">
   <div class="card" style="width:400px">
-    <img class="card-img-top" src="/img/katana.jpg" alt="Card image" style="width:100%">
+    <img class="card-img-top" src="/img/katana.jpg" alt="Imatge atracció katana" style="width:100%">
     <div class="card-body">
       <h4 class="card-title">Katana</h4>
       <p class="card-text">Girs, elevacions,adrenalina, et mouras com l'espasa d'un samurai! </p>
@@ -96,7 +96,7 @@
     <div class="col-sm-4">
       <div class="container">
         <div class="card" style="width:400px">
-          <img class="card-img-top" src="/img/vikings.jpg" alt="Card image" style="width:100%" >
+          <img class="card-img-top" src="/img/vikings.jpg" alt="Imatge atracció vikings" style="width:100%" >
           <div class="card-body">
             <h4 class="card-title">Vikings</h4>
             <p class="card-text">Lluita contra totes les barques vikingues a cop d'aigua!</p>
@@ -107,7 +107,7 @@
 <div class="col-sm-4">
   <div class="container">
     <div class="card" style="width:400px">
-      <img class="card-img-top" src="/img/tsunami.jpg" alt="Card image" style="width:100%">
+      <img class="card-img-top" src="/img/tsunami.jpg" alt="imatge atraccio Tsunami" style="width:100%">
       <div class="card-body">
         <h4 class="card-title">Tsunami</h4>
         <p class="card-text">Les ones,oh les ones, son divertides i per a tota la familia!</p>
@@ -118,7 +118,7 @@
 <div class="col-sm-4">
 <div class="container">
   <div class="card" style="width:400px">
-    <img class="card-img-top" src="/img/cine4d.jpg" alt="Card image" style="width:100%">
+    <img class="card-img-top" src="/img/cine4d.jpg" alt="imatge atraccio cine 4d" style="width:100%">
     <div class="card-body">
       <h4 class="card-title">4D Experience</h4>
       <p class="card-text">Viu l'experiència 4D i ajuda a sami a lluitar contra el monstruos kraken!</p>

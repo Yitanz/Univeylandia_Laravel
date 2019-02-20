@@ -665,7 +665,7 @@ class Connection implements ConnectionInterface
                 $query, $this->prepareBindings($bindings), $e
             );
         }
-
+        
         return $result;
     }
 

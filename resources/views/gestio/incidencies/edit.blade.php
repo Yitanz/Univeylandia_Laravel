@@ -1,4 +1,4 @@
-@extends("layouts.plantillaGestio")
+@extends("layouts.gestio")
 
 @section("navbarIntranet")
 @endsection
@@ -48,6 +48,7 @@
             <div class="col-md-6 mb-3">
               <label for="assigned-employee">Assignar a:</label>
               <select id="employees" name="assigned-employee" class="form-control form-control-sm">
+              @if($treballador_assignat != null)
               @foreach ($treballadors as $treballador)
                 @if($treballador->id == $treballador_assignat->id)
                   <option selected value="{{ $treballador_assignat->id }}"> {{ $treballador_assignat->nom }} {{ $treballador_assignat->cognom1 }} {{ $treballador_assignat->cognom2 }} {{ $treballador_assignat->numero_document }}</option>
@@ -55,10 +56,15 @@
                   <option value="{{ $treballador->id }}">{{ $treballador->nom }} {{ $treballador->cognom1 }} {{ $treballador->cognom2 }} {{ $treballador->numero_document }}</option>
                 @endif
               @endforeach
+              @else
+              @foreach ($treballadors as $treballador)
+                  <option value="{{ $treballador->id }}">{{ $treballador->nom }} {{ $treballador->cognom1 }} {{ $treballador->cognom2 }} {{ $treballador->numero_document }}</option>
+              @endforeach
+              @endif
               </select>
             </div>
           </div>
-          <button class="btn btn-primary" type="submit">Assignar</button>
+          <button class="btn btn-primary" type="submit" value="Assignar">Assignar</button>
           <a href="{{ URL::previous() }}" class="btn btn-secondary" type="reset">Cancel·lar</a>
         </form>
 

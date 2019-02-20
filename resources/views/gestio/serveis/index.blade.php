@@ -1,4 +1,4 @@
-@extends("layouts.plantillaGestio")
+@extends("layouts.gestio")
 
 @section("navbarIntranet")
 @endsection
@@ -22,7 +22,7 @@
             <h1 class="h2">Administrar Serveis</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
-                <button class="btn btn-sm btn-outline-secondary">
+                <button class="btn btn-sm btn-outline-secondary" value="Exportar">
                   <span data-feather="save"></span>
                   Exportar
                 </button>
@@ -63,7 +63,7 @@
                         <td>{{ $servei_zona->nom_empleat }}</td>
                         <td><a class="btn btn-primary" href="{{ route('serveis.edit', $servei_zona->id) }}">Modificar</a></td>
                         <td>
-                          <form action="{{ route('serveis.destroy', $servei_zona->id)}}" method="post" 
+                          <form action="{{ route('serveis.destroy', $servei_zona->id)}}" method="post"
                           onsubmit="return confirm('Estàs segur de voler eliminar la incidència?');">
                               @csrf
                               @method('DELETE')

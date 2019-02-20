@@ -1,4 +1,4 @@
-@extends("layouts.plantillaGestio")
+@extends("layouts.gestio")
 
 @section("navbarIntranet")
 @endsection
@@ -32,7 +32,7 @@
           <label for="nom">Zona Nom:</label>
           <input type="text" class="form-control" name="zona_nom" value={{ $zona->zona_nom }}>
         </div>
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary" value="Actualitzar">Actualitza</button>
       </form>
   </div>
 </div>

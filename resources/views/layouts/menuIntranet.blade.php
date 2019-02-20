@@ -103,6 +103,24 @@
 
 
           <li class="nav-item">
+            <a class="nav-link {{ request()->routeIs('zones*') ? 'active' : '' }}" data-toggle="collapse" aria-expanded="{{ request()->routeIs('zones*') ? 'true' : 'false' }}" href="#submenu7">
+              <span data-feather="truck"></span>
+              Gestionar Zones
+              <span data-feather="chevron-right"></span>
+            </a>
+          </li>
+
+          <ul class="nav flex-column collapse {{ request()->routeIs('zones*') ? 'show' : '' }}" id="submenu7" data-parent="#sidebar">
+            <li class="nav-item">
+              <a class="nav-link nav-interior {{ request()->routeIs('zones.create') ? 'active' : '' }}" href="{{  URL::route('zones.create')  }}"><span data-feather="plus-square"></span>Crear Zona</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-interior {{ request()->routeIs('zones.index') ? 'active' : '' }}" href="{{ URL::route('zones.index') }}"><span data-feather="file-text"></span>Gestionar Zones</a>
+            </li>
+          </ul>
+
+
+          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" aria-expanded="false" href="#submenu9">
               <span data-feather="alert-triangle"></span>
               Gestionar Noticies

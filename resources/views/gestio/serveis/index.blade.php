@@ -63,10 +63,11 @@
                         <td>{{ $servei_zona->nom_empleat }}</td>
                         <td><a class="btn btn-primary" href="{{ route('serveis.edit', $servei_zona->id) }}">Modificar</a></td>
                         <td>
-                            <form action="{{ route('serveis.destroy', $servei_zona->id)}}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger" type="submit">Eliminar</button>
+                          <form action="{{ route('serveis.destroy', $servei_zona->id)}}" method="post" 
+                          onsubmit="return confirm('Estàs segur de voler eliminar la incidència?');">
+                              @csrf
+                              @method('DELETE')
+                              <button class="btn btn-danger" type="submit">Eliminar</button>
                             </form>
                         </td>
                     </tr>
